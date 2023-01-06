@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E1B0A4F2963044D0092B6E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B0A4E2963044D0092B6E3 /* AppDelegate.swift */; };
+		3E1B0A512963044D0092B6E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B0A502963044D0092B6E3 /* SceneDelegate.swift */; };
+		3E1B0A532963044D0092B6E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B0A522963044D0092B6E3 /* ViewController.swift */; };
+		3E1B0A562963044D0092B6E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1B0A542963044D0092B6E3 /* Main.storyboard */; };
+		3E1B0A582963044E0092B6E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E1B0A572963044E0092B6E3 /* Assets.xcassets */; };
+		3E1B0A5B2963044E0092B6E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1B0A592963044E0092B6E3 /* LaunchScreen.storyboard */; };
+		3E1B0A632963E9310092B6E3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B0A622963E9310092B6E3 /* WelcomeViewController.swift */; };
+		3E1B0A652963EA4C0092B6E3 /* WholeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B0A642963EA4C0092B6E3 /* WholeSettingViewController.swift */; };
+		3E1B0A75296579C80092B6E3 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B0A74296579C80092B6E3 /* ProfileEditViewController.swift */; };
+		3E7D8BBA2965A8DC0032EA4B /* ChangeIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D8BB92965A8DC0032EA4B /* ChangeIDViewController.swift */; };
+		3E7D8BBC2965A8F50032EA4B /* ChangeSNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D8BBB2965A8F50032EA4B /* ChangeSNViewController.swift */; };
+		3E7D8BBE2965AD360032EA4B /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D8BBD2965AD360032EA4B /* QuestionViewController.swift */; };
+		CEC186D868B45BED813D68E8 /* Pods_WHAT_IS_MONEY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED68B39754FB3F11BE7450CB /* Pods_WHAT_IS_MONEY.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3E1B0A4B2963044D0092B6E3 /* WHAT_IS_MONEY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHAT_IS_MONEY.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E1B0A4E2963044D0092B6E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3E1B0A502963044D0092B6E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3E1B0A522963044D0092B6E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3E1B0A552963044D0092B6E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3E1B0A572963044E0092B6E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3E1B0A5A2963044E0092B6E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3E1B0A5C2963044E0092B6E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E1B0A622963E9310092B6E3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		3E1B0A642963EA4C0092B6E3 /* WholeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeSettingViewController.swift; sourceTree = "<group>"; };
+		3E1B0A74296579C80092B6E3 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		3E7D8BB92965A8DC0032EA4B /* ChangeIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeIDViewController.swift; sourceTree = "<group>"; };
+		3E7D8BBB2965A8F50032EA4B /* ChangeSNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSNViewController.swift; sourceTree = "<group>"; };
+		3E7D8BBD2965AD360032EA4B /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		67731961D65FD9E93C8616EA /* Pods-WHAT_IS_MONEY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHAT_IS_MONEY.debug.xcconfig"; path = "Target Support Files/Pods-WHAT_IS_MONEY/Pods-WHAT_IS_MONEY.debug.xcconfig"; sourceTree = "<group>"; };
+		DC09561F005AA98214443691 /* Pods-WHAT_IS_MONEY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHAT_IS_MONEY.release.xcconfig"; path = "Target Support Files/Pods-WHAT_IS_MONEY/Pods-WHAT_IS_MONEY.release.xcconfig"; sourceTree = "<group>"; };
+		ED68B39754FB3F11BE7450CB /* Pods_WHAT_IS_MONEY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHAT_IS_MONEY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E1B0A482963044D0092B6E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEC186D868B45BED813D68E8 /* Pods_WHAT_IS_MONEY.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27872D4B7C43331F85AC78A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED68B39754FB3F11BE7450CB /* Pods_WHAT_IS_MONEY.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33B161F8AE1385784F2EA3B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67731961D65FD9E93C8616EA /* Pods-WHAT_IS_MONEY.debug.xcconfig */,
+				DC09561F005AA98214443691 /* Pods-WHAT_IS_MONEY.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3E1B0A422963044D0092B6E3 = {
+			isa = PBXGroup;
+			children = (
+				3E1B0A4D2963044D0092B6E3 /* WHAT_IS_MONEY */,
+				3E1B0A4C2963044D0092B6E3 /* Products */,
+				33B161F8AE1385784F2EA3B6 /* Pods */,
+				27872D4B7C43331F85AC78A1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3E1B0A4C2963044D0092B6E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E1B0A4B2963044D0092B6E3 /* WHAT_IS_MONEY.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E1B0A4D2963044D0092B6E3 /* WHAT_IS_MONEY */ = {
+			isa = PBXGroup;
+			children = (
+				3E1B0A4E2963044D0092B6E3 /* AppDelegate.swift */,
+				3E1B0A502963044D0092B6E3 /* SceneDelegate.swift */,
+				3E1B0A522963044D0092B6E3 /* ViewController.swift */,
+				3E1B0A622963E9310092B6E3 /* WelcomeViewController.swift */,
+				3E1B0A642963EA4C0092B6E3 /* WholeSettingViewController.swift */,
+				3E1B0A542963044D0092B6E3 /* Main.storyboard */,
+				3E1B0A74296579C80092B6E3 /* ProfileEditViewController.swift */,
+				3E7D8BB92965A8DC0032EA4B /* ChangeIDViewController.swift */,
+				3E7D8BBB2965A8F50032EA4B /* ChangeSNViewController.swift */,
+				3E7D8BBD2965AD360032EA4B /* QuestionViewController.swift */,
+				3E1B0A572963044E0092B6E3 /* Assets.xcassets */,
+				3E1B0A592963044E0092B6E3 /* LaunchScreen.storyboard */,
+				3E1B0A5C2963044E0092B6E3 /* Info.plist */,
+			);
+			path = WHAT_IS_MONEY;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3E1B0A4A2963044D0092B6E3 /* WHAT_IS_MONEY */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E1B0A5F2963044E0092B6E3 /* Build configuration list for PBXNativeTarget "WHAT_IS_MONEY" */;
+			buildPhases = (
+				E748DFC0213C25CD09AE84AA /* [CP] Check Pods Manifest.lock */,
+				3E1B0A472963044D0092B6E3 /* Sources */,
+				3E1B0A482963044D0092B6E3 /* Frameworks */,
+				3E1B0A492963044D0092B6E3 /* Resources */,
+				0D481D1074006AECC205A2DE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WHAT_IS_MONEY;
+			productName = WHAT_IS_MONEY;
+			productReference = 3E1B0A4B2963044D0092B6E3 /* WHAT_IS_MONEY.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3E1B0A432963044D0092B6E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					3E1B0A4A2963044D0092B6E3 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 3E1B0A462963044D0092B6E3 /* Build configuration list for PBXProject "WHAT_IS_MONEY" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3E1B0A422963044D0092B6E3;
+			productRefGroup = 3E1B0A4C2963044D0092B6E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3E1B0A4A2963044D0092B6E3 /* WHAT_IS_MONEY */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E1B0A492963044D0092B6E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E1B0A5B2963044E0092B6E3 /* LaunchScreen.storyboard in Resources */,
+				3E1B0A582963044E0092B6E3 /* Assets.xcassets in Resources */,
+				3E1B0A562963044D0092B6E3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D481D1074006AECC205A2DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WHAT_IS_MONEY/Pods-WHAT_IS_MONEY-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WHAT_IS_MONEY/Pods-WHAT_IS_MONEY-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WHAT_IS_MONEY/Pods-WHAT_IS_MONEY-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E748DFC0213C25CD09AE84AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WHAT_IS_MONEY-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E1B0A472963044D0092B6E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E1B0A532963044D0092B6E3 /* ViewController.swift in Sources */,
+				3E1B0A632963E9310092B6E3 /* WelcomeViewController.swift in Sources */,
+				3E1B0A4F2963044D0092B6E3 /* AppDelegate.swift in Sources */,
+				3E1B0A512963044D0092B6E3 /* SceneDelegate.swift in Sources */,
+				3E1B0A652963EA4C0092B6E3 /* WholeSettingViewController.swift in Sources */,
+				3E7D8BBC2965A8F50032EA4B /* ChangeSNViewController.swift in Sources */,
+				3E7D8BBA2965A8DC0032EA4B /* ChangeIDViewController.swift in Sources */,
+				3E1B0A75296579C80092B6E3 /* ProfileEditViewController.swift in Sources */,
+				3E7D8BBE2965AD360032EA4B /* QuestionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3E1B0A542963044D0092B6E3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E1B0A552963044D0092B6E3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3E1B0A592963044E0092B6E3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E1B0A5A2963044E0092B6E3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3E1B0A5D2963044E0092B6E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3E1B0A5E2963044E0092B6E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3E1B0A602963044E0092B6E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67731961D65FD9E93C8616EA /* Pods-WHAT_IS_MONEY.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K33527BCYK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WHAT_IS_MONEY/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "WHATISMONEY.WHAT-IS-MONEY";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3E1B0A612963044E0092B6E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC09561F005AA98214443691 /* Pods-WHAT_IS_MONEY.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K33527BCYK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WHAT_IS_MONEY/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "WHATISMONEY.WHAT-IS-MONEY";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3E1B0A462963044D0092B6E3 /* Build configuration list for PBXProject "WHAT_IS_MONEY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E1B0A5D2963044E0092B6E3 /* Debug */,
+				3E1B0A5E2963044E0092B6E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E1B0A5F2963044E0092B6E3 /* Build configuration list for PBXNativeTarget "WHAT_IS_MONEY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E1B0A602963044E0092B6E3 /* Debug */,
+				3E1B0A612963044E0092B6E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3E1B0A432963044D0092B6E3 /* Project object */;
+}
