@@ -836,7 +836,7 @@
         <!--로그인-->
         <scene sceneID="Wgz-gy-Ewa">
             <objects>
-                <viewController id="4ut-8f-2Hv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="4ut-8f-2Hv" customClass="LoginViewController" customModule="WHAT_IS_MONEY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C8Z-Eh-4kF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -910,6 +910,7 @@
                                                     <color key="baseBackgroundColor" red="0.98823529409999999" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
+                                                    <action selector="loginClicked:" destination="4ut-8f-2Hv" eventType="touchUpInside" id="aNm-2u-bCn"/>
                                                     <segue destination="H11-OK-8dm" kind="show" id="POD-KL-Kdh"/>
                                                 </connections>
                                             </button>
@@ -943,6 +944,9 @@
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="baseBackgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="googleAuthClicked:" destination="4ut-8f-2Hv" eventType="touchUpInside" id="cq5-7N-oRh"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -962,6 +966,9 @@
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="appleAuthClicked:" destination="4ut-8f-2Hv" eventType="touchUpInside" id="9RA-Nt-ftI"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -1045,6 +1052,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="로그인" id="ZJR-pU-v6j"/>
+                    <connections>
+                        <outlet property="IDInput" destination="O2h-6S-kHY" id="8do-WZ-CB8"/>
+                        <outlet property="PWInput" destination="QLP-5e-HYS" id="YHl-Nl-IfS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VbY-QB-aYA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1053,7 +1064,7 @@
         <!--아이디/비밀번호 찾기-->
         <scene sceneID="MS1-z6-I00">
             <objects>
-                <viewController id="sCC-wz-NFK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindIdPwViewController" id="sCC-wz-NFK" customClass="FindIdPwViewController" customModule="WHAT_IS_MONEY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hbZ-3W-7z6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1094,6 +1105,9 @@
                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                                             <color key="baseBackgroundColor" red="0.98823529409999999" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="findIDclicked:" destination="sCC-wz-NFK" eventType="touchUpInside" id="1KR-wB-Bd5"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전송버튼을 누르면 등록하신 이메일로 아이디를 확인할 수 있는 메일이 발송됩니다!" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qd-07-Iju">
                                                         <rect key="frame" x="0.0" y="151.33333333333331" width="312" height="24"/>
@@ -1146,6 +1160,9 @@
                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                                             <color key="baseBackgroundColor" red="0.98823529409999999" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="findPWclicked:" destination="sCC-wz-NFK" eventType="touchUpInside" id="m03-KA-AAg"/>
+                                                        </connections>
                                                     </button>
                                                     <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전송버튼을 누르면 등록하신 이메일로 비밀번호를 재설정할 수 있는 메일이 발송됩니다!" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcE-KW-hma">
                                                         <rect key="frame" x="0.0" y="211.33333333333331" width="312" height="24"/>
@@ -1185,6 +1202,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="아이디/비밀번호 찾기" id="jsl-Bi-ULQ"/>
+                    <connections>
+                        <outlet property="EmailInput" destination="ZPD-fH-pPv" id="gd8-Pl-4PE"/>
+                        <outlet property="EmailInputForPw" destination="jg5-O0-OWc" id="0r9-DH-lfE"/>
+                        <outlet property="IdInput" destination="leE-G3-yID" id="yCD-v8-vmz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neZ-zp-X0g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1193,7 +1215,7 @@
         <!--회원가입-->
         <scene sceneID="ckU-vK-0w9">
             <objects>
-                <viewController id="PUt-BZ-6bW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="PUt-BZ-6bW" customClass="RegisterViewController" customModule="WHAT_IS_MONEY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8C4-1M-35U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1254,6 +1276,9 @@
                                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="checkIDValidation:" destination="PUt-BZ-6bW" eventType="touchUpInside" id="omu-Bc-NBN"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -1269,7 +1294,7 @@
                                                             <constraint firstAttribute="height" constant="48" id="OVY-t5-dsc"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qMk-wN-4j8">
                                                         <rect key="frame" x="0.0" y="60" width="312" height="48"/>
@@ -1278,7 +1303,7 @@
                                                             <constraint firstAttribute="width" constant="312" id="vj4-Cv-7pa"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -1299,6 +1324,7 @@
                                     <color key="baseBackgroundColor" red="0.98823529409999999" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="registerClicked:" destination="PUt-BZ-6bW" eventType="touchUpInside" id="oxz-Qj-Liz"/>
                                     <segue destination="1kU-Ua-Ixo" kind="show" id="hKK-gK-Cif"/>
                                 </connections>
                             </button>
@@ -1313,6 +1339,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="회원가입" id="FbK-It-cAx"/>
+                    <connections>
+                        <outlet property="ConfirmPWInput" destination="qMk-wN-4j8" id="eOy-Ot-EJc"/>
+                        <outlet property="EmailInput" destination="sXU-8b-dWb" id="b2E-ls-FV6"/>
+                        <outlet property="IDInput" destination="n2F-4R-8Td" id="hhE-UV-y4V"/>
+                        <outlet property="NameInput" destination="Zcj-oh-Azp" id="pZL-ox-Bu8"/>
+                        <outlet property="PWInput" destination="q1f-yO-NnM" id="LYy-B0-o6S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wu-db-BWU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1321,7 +1354,7 @@
         <!--개인정보 이용처리-->
         <scene sceneID="cwD-Oo-g9L">
             <objects>
-                <viewController id="1kU-Ua-Ixo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AgreePrivacyPolicyViewController" id="1kU-Ua-Ixo" customClass="AgreePrivacyPolicyViewController" customModule="WHAT_IS_MONEY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JnQ-ug-JLX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1338,6 +1371,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="baseBackgroundColor" red="0.98823529409999999" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="AgreeClicked:" destination="1kU-Ua-Ixo" eventType="touchUpInside" id="FU8-Ji-ev3"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqY-EN-Kam">
                                 <rect key="frame" x="19" y="191" width="337" height="345"/>
