@@ -8,4 +8,6 @@ target 'WHAT_IS_MONEY' do
   # Pods for WHAT_IS_MONEY
   pod 'SnapKit'
   pod 'Then'
+  pod 'GoogleSignIn'
+  pod 'GoogleSignInSwiftSupport'
 end
