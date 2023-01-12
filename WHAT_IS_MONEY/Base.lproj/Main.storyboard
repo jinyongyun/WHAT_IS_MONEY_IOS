@@ -776,6 +776,15 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pigImg" translatesAutoresizingMaskIntoConstraints="NO" id="zH4-Ni-RGk">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cid-4k-Z5D">
+                                <rect key="frame" x="36" y="713" width="88" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="차트 보기"/>
+                                <connections>
+                                    <segue destination="2HN-cw-Uhc" kind="show" destinationCreationSelector="MovetoChart:" id="KZK-UV-gXX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sxk-fj-WzG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -815,6 +824,17 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pas-wC-BGv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4194" y="-373"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="IEd-le-dyy">
+            <objects>
+                <hostingController storyboardIdentifier="ChartViewController" id="2HN-cw-Uhc" customClass="ChartViewController" customModule="WHAT_IS_MONEY" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="AU0-zI-ApY"/>
+                    <navigationItem key="navigationItem" id="tk7-kq-m56"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l7I-os-OG6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5115" y="276"/>
         </scene>
         <!--Record View Controller-->
         <scene sceneID="JS0-H7-TKd">
@@ -875,7 +895,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SsA-NP-lxt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4190.0763358778622" y="975.35211267605644"/>
+            <point key="canvasLocation" x="5116.7938931297704" y="975.35211267605644"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="qCW-HP-iZ8">
