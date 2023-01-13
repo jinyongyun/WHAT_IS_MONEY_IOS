@@ -11,6 +11,11 @@
 		15279A472969D17300C14AC6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15279A462969D17300C14AC6 /* RegisterViewController.swift */; };
 		15279A492969D3F600C14AC6 /* FindIdPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15279A482969D3F600C14AC6 /* FindIdPwViewController.swift */; };
 		15279A4B2969D4A700C14AC6 /* AgreePrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15279A4A2969D4A700C14AC6 /* AgreePrivacyPolicyViewController.swift */; };
+		15279A4F296D567E00C14AC6 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15279A4E296D567E00C14AC6 /* RecordViewController.swift */; };
+		15279A54296D71CD00C14AC6 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15279A52296D71CD00C14AC6 /* RecordTableViewCell.swift */; };
+		15279A55296D71CD00C14AC6 /* RecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15279A53296D71CD00C14AC6 /* RecordTableViewCell.xib */; };
+		15279A57296ED3F000C14AC6 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15279A56296ED3F000C14AC6 /* ChartViewController.swift */; };
+		15279A59296ED6EB00C14AC6 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15279A58296ED6EB00C14AC6 /* ChartView.swift */; };
 		3E1B0A4F2963044D0092B6E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B0A4E2963044D0092B6E3 /* AppDelegate.swift */; };
 		3E1B0A512963044D0092B6E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B0A502963044D0092B6E3 /* SceneDelegate.swift */; };
 		3E1B0A532963044D0092B6E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B0A522963044D0092B6E3 /* ViewController.swift */; };
@@ -35,6 +40,11 @@
 		15279A462969D17300C14AC6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		15279A482969D3F600C14AC6 /* FindIdPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdPwViewController.swift; sourceTree = "<group>"; };
 		15279A4A2969D4A700C14AC6 /* AgreePrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreePrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		15279A4E296D567E00C14AC6 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		15279A52296D71CD00C14AC6 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		15279A53296D71CD00C14AC6 /* RecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTableViewCell.xib; sourceTree = "<group>"; };
+		15279A56296ED3F000C14AC6 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		15279A58296ED6EB00C14AC6 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		3E1B0A4B2963044D0092B6E3 /* WHAT_IS_MONEY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHAT_IS_MONEY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1B0A4E2963044D0092B6E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E1B0A502963044D0092B6E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +124,11 @@
 				3E1B0A622963E9310092B6E3 /* WelcomeViewController.swift */,
 				3E1B0A642963EA4C0092B6E3 /* WholeSettingViewController.swift */,
 				3E1B0A542963044D0092B6E3 /* Main.storyboard */,
+				15279A56296ED3F000C14AC6 /* ChartViewController.swift */,
+				15279A58296ED6EB00C14AC6 /* ChartView.swift */,
+				15279A4E296D567E00C14AC6 /* RecordViewController.swift */,
+				15279A52296D71CD00C14AC6 /* RecordTableViewCell.swift */,
+				15279A53296D71CD00C14AC6 /* RecordTableViewCell.xib */,
 				15279A4A2969D4A700C14AC6 /* AgreePrivacyPolicyViewController.swift */,
 				15279A482969D3F600C14AC6 /* FindIdPwViewController.swift */,
 				15279A462969D17300C14AC6 /* RegisterViewController.swift */,
@@ -195,6 +210,7 @@
 			files = (
 				3E1B0A5B2963044E0092B6E3 /* LaunchScreen.storyboard in Resources */,
 				3E1B0A582963044E0092B6E3 /* Assets.xcassets in Resources */,
+				15279A55296D71CD00C14AC6 /* RecordTableViewCell.xib in Resources */,
 				3E1B0A562963044D0092B6E3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,11 +269,17 @@
 				15279A472969D17300C14AC6 /* RegisterViewController.swift in Sources */,
 				3E3A0669296FCE2F0023BBFB /* WriteRecordViewController.swift in Sources */,
 				3E1B0A632963E9310092B6E3 /* WelcomeViewController.swift in Sources */,
+				15279A4F296D567E00C14AC6 /* RecordViewController.swift in Sources */,
 				15279A492969D3F600C14AC6 /* FindIdPwViewController.swift in Sources */,
+				15279A57296ED3F000C14AC6 /* ChartViewController.swift in Sources */,
 				3E1B0A4F2963044D0092B6E3 /* AppDelegate.swift in Sources */,
 				3E1B0A512963044D0092B6E3 /* SceneDelegate.swift in Sources */,
 				3E1B0A652963EA4C0092B6E3 /* WholeSettingViewController.swift in Sources */,
 				3EE5DB55296E866F009E6FA2 /* RecordDetailTableViewCell.swift in Sources */,
+
+				15279A54296D71CD00C14AC6 /* RecordTableViewCell.swift in Sources */,
+				15279A59296ED6EB00C14AC6 /* ChartView.swift in Sources */,
+
 				3E7D8BBC2965A8F50032EA4B /* ChangeSNViewController.swift in Sources */,
 				3E7D8BBA2965A8DC0032EA4B /* ChangeIDViewController.swift in Sources */,
 				3E1B0A75296579C80092B6E3 /* ProfileEditViewController.swift in Sources */,
