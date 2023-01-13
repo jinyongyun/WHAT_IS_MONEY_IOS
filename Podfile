@@ -6,8 +6,5 @@ target 'WHAT_IS_MONEY' do
   use_frameworks!
 
   # Pods for WHAT_IS_MONEY
-  pod 'SnapKit'
-  pod 'Then'
-  pod 'GoogleSignIn'
-  pod 'GoogleSignInSwiftSupport'
+  pod 'DropDown'
 end
