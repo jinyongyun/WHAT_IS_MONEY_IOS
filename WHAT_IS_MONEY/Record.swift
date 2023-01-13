@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct Record {
+    
+var diaryDate: Date
+var recordtype: String
+var categorytype: String
+var moneyAmount: String
+    
+}
