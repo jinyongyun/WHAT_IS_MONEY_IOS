@@ -817,9 +817,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="G1A-ai-rUQ" kind="show" id="mXW-F1-CFo"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k0w-5h-8DA"/>
@@ -835,23 +832,23 @@
         <scene sceneID="1yo-zd-0Lz">
             <objects>
                 <viewController id="G1A-ai-rUQ" customClass="RecordDetailViewController" customModule="WHAT_IS_MONEY" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Fk6-kp-hDV">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Fk6-kp-hDV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vW3-2Y-OQX">
-                                <rect key="frame" x="27" y="113.33333333333333" width="35" height="23.999999999999986"/>
+                                <rect key="frame" x="27" y="69.333333333333329" width="35" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ekB-bT-0B1">
-                                <rect key="frame" x="27" y="142.33333333333334" width="321" height="33.333333333333343"/>
+                                <rect key="frame" x="27" y="98.333333333333329" width="321" height="33.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oq4-6Z-bn6">
-                                <rect key="frame" x="297.33333333333331" y="146" width="50.666666666666686" height="26"/>
+                                <rect key="frame" x="297.33333333333331" y="102" width="50.666666666666686" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="Ig2-uc-e9c"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="qtf-1e-3Al"/>
@@ -864,7 +861,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCd-d2-LRN">
-                                <rect key="frame" x="27" y="734.33333333333337" width="321" height="59"/>
+                                <rect key="frame" x="27" y="690.33333333333337" width="321" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="aeP-PQ-ic8"/>
                                 </constraints>
@@ -876,13 +873,13 @@
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기록 상세" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6w-T4-6iM">
-                                <rect key="frame" x="27" y="206.66666666666666" width="74" height="24"/>
+                                <rect key="frame" x="27" y="162.66666666666666" width="74" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syv-W8-cWU">
-                                <rect key="frame" x="244" y="196.33333333333334" width="47" height="47"/>
+                                <rect key="frame" x="244" y="152.33333333333334" width="47" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="bEC-9C-vkq"/>
                                 </constraints>
@@ -894,7 +891,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7O-94-x0j">
-                                <rect key="frame" x="296" y="202" width="54" height="35"/>
+                                <rect key="frame" x="296" y="158" width="54" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="편집"/>
                                 <connections>
@@ -948,7 +945,7 @@
                                 </prototypes>
                             </tableView>
                             <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="IVT-Ms-3jN">
-                                <rect key="frame" x="213" y="100" width="146" height="34"/>
+                                <rect key="frame" x="213" y="56" width="146" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="146" id="enF-60-RPE"/>
                                 </constraints>
@@ -1008,17 +1005,17 @@
             <objects>
                 <viewController id="uyV-It-98s" customClass="WriteRecordViewController" customModule="WHAT_IS_MONEY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sYG-jl-xLS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유형선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qy-Am-TmJ">
-                                <rect key="frame" x="32" y="216" width="73" height="26"/>
+                                <rect key="frame" x="32" y="172" width="73" height="26"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlP-dl-axs">
-                                <rect key="frame" x="32" y="263" width="71" height="35"/>
+                                <rect key="frame" x="32" y="219" width="71" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="NUP-kN-diS"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="Wci-Q0-Ude"/>
@@ -1035,7 +1032,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keP-uR-Zr0">
-                                <rect key="frame" x="139.33333333333334" y="263" width="71" height="35"/>
+                                <rect key="frame" x="139.33333333333334" y="219" width="71" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="1Ts-Td-v2o"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="6Yb-E1-by1"/>
@@ -1051,13 +1048,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBP-xO-0oN">
-                                <rect key="frame" x="32" y="348" width="114" height="26"/>
+                                <rect key="frame" x="32" y="304" width="114" height="26"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Fg-Tn-e4K">
-                                <rect key="frame" x="32" y="386" width="311" height="58"/>
+                                <rect key="frame" x="32" y="342" width="311" height="58"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xj3-1d-yMV">
                                         <rect key="frame" x="0.0" y="12" width="311" height="34"/>
@@ -1100,7 +1097,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="금액 입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OG1-lb-JDK">
-                                <rect key="frame" x="32" y="494" width="78" height="26"/>
+                                <rect key="frame" x="32" y="450" width="78" height="26"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1114,7 +1111,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gs7-kn-WrC">
-                                <rect key="frame" x="32" y="639" width="311" height="59"/>
+                                <rect key="frame" x="32" y="595" width="311" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="D3t-0Z-lru"/>
                                     <constraint firstAttribute="width" constant="311" id="j23-Ev-ImO"/>
@@ -1131,13 +1128,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aib-9B-TYh">
-                                <rect key="frame" x="32" y="104" width="78" height="26"/>
+                                <rect key="frame" x="32" y="60" width="78" height="26"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NJr-tB-2MG">
-                                <rect key="frame" x="0.0" y="148" width="375" height="34.333333333333343"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="34.333333333333343"/>
                                 <connections>
                                     <action selector="DatePickerValueChanged:" destination="uyV-It-98s" eventType="valueChanged" id="3Oq-D4-Eza"/>
                                 </connections>
@@ -1292,7 +1289,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="1OG-e2-0mc">
-                                <rect key="frame" x="31.666666666666657" y="157.66666666666663" width="312" height="497.00000000000011"/>
+                                <rect key="frame" x="31.666666666666657" y="157.66666666666663" width="312" height="497"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="l1g-4k-G61">
                                         <rect key="frame" x="115.66666666666666" y="0.0" width="80.666666666666657" height="66"/>
