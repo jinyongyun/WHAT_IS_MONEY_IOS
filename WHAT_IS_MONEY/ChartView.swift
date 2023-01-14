@@ -56,9 +56,7 @@ struct ChartView: View {
     @State var selectedPie: String = ""
     var body: some View {
         ScrollView {
-            Text("차트")
-                .fontWeight(.bold)
-                .font(.system(size: 20))
+           
             VStack(alignment: .leading, spacing: 0) {
                     Text("저번달")
                         .fontWeight(.bold)
@@ -160,7 +158,6 @@ final class ChartDataModel: ObservableObject {
             startingAngle = lastBarEndAngle
         }
         lastBarEndAngle += Angle(degrees: Double(value / totalValue) * 360 )
-        print(lastBarEndAngle.degrees)
         return lastBarEndAngle
     }
 }

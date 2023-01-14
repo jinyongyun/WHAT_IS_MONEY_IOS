@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8dp-Tc-Tf2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Opg-A4-2wu">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -679,26 +679,17 @@
             </objects>
             <point key="canvasLocation" x="4941.6000000000004" y="-1040.3940886699509"/>
         </scene>
-        <!--Welcome View Controller-->
+        <!--메인-->
         <scene sceneID="UzI-Mj-R6j">
             <objects>
-                <viewController storyboardIdentifier="WelcomeViewController" id="H11-OK-8dm" customClass="WelcomeViewController" customModule="WHAT_IS_MONEY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" modalPresentationStyle="fullScreen" id="H11-OK-8dm" customClass="WelcomeViewController" customModule="WHAT_IS_MONEY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LdW-HI-1QW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="어서오세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfP-4H-lwo">
-                                <rect key="frame" x="131.66666666666666" y="283.33333333333331" width="129.99999999999997" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunset" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OB5-Sk-Jvl">
-                                <rect key="frame" x="112" y="273.66666666666669" width="169" height="149"/>
-                                <color key="tintColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="cld-h0-TxC"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pigImg" translatesAutoresizingMaskIntoConstraints="NO" id="2RO-dN-f28">
+                                <rect key="frame" x="0.0" y="93" width="393" height="666"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WS-Sd-fIr">
                                 <rect key="frame" x="16" y="613" width="361" height="55"/>
@@ -730,39 +721,34 @@
                                     <segue destination="Ebi-NF-vdQ" kind="show" id="051-ch-s54"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="머니뭐니님!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CE-Qh-oOp">
-                                <rect key="frame" x="126.66666666666669" y="320.33333333333331" width="140" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cid-4k-Z5D">
+                                <rect key="frame" x="272" y="356" width="88" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="차트 보기"/>
+                                <connections>
+                                    <segue destination="4Xb-Xo-tQ3" kind="show" destinationCreationSelector="showChartView:" id="Z2X-LU-By6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nVq-m2-QVd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OB5-Sk-Jvl" firstAttribute="top" secondItem="nVq-m2-QVd" secondAttribute="top" constant="170" id="0W4-t6-jzH"/>
-                            <constraint firstItem="4CE-Qh-oOp" firstAttribute="centerX" secondItem="LdW-HI-1QW" secondAttribute="centerX" id="9XG-Zm-HTT"/>
                             <constraint firstItem="8WS-Sd-fIr" firstAttribute="centerX" secondItem="LdW-HI-1QW" secondAttribute="centerX" id="9us-oZ-JH1"/>
                             <constraint firstItem="nVq-m2-QVd" firstAttribute="trailing" secondItem="8WS-Sd-fIr" secondAttribute="trailing" constant="16" id="Bbs-tP-bxO"/>
                             <constraint firstItem="nVq-m2-QVd" firstAttribute="trailing" secondItem="C4v-DG-KCp" secondAttribute="trailing" constant="16" id="O4V-El-b2x"/>
-                            <constraint firstItem="OB5-Sk-Jvl" firstAttribute="centerX" secondItem="LdW-HI-1QW" secondAttribute="centerX" id="OAH-TD-S4a"/>
-                            <constraint firstItem="EfP-4H-lwo" firstAttribute="top" secondItem="OB5-Sk-Jvl" secondAttribute="bottom" constant="49" id="b9C-0a-Feu"/>
                             <constraint firstItem="nVq-m2-QVd" firstAttribute="bottom" secondItem="C4v-DG-KCp" secondAttribute="bottom" constant="87" id="bik-KD-xfG"/>
                             <constraint firstItem="C4v-DG-KCp" firstAttribute="centerX" secondItem="LdW-HI-1QW" secondAttribute="centerX" id="brn-ds-MFQ"/>
-                            <constraint firstItem="4CE-Qh-oOp" firstAttribute="top" secondItem="EfP-4H-lwo" secondAttribute="bottom" constant="1" id="cl1-Gs-AiS"/>
                             <constraint firstItem="C4v-DG-KCp" firstAttribute="leading" secondItem="nVq-m2-QVd" secondAttribute="leading" constant="16" id="iDI-Dr-uVa"/>
                             <constraint firstItem="8WS-Sd-fIr" firstAttribute="leading" secondItem="nVq-m2-QVd" secondAttribute="leading" constant="16" id="j4y-GY-QOb"/>
-                            <constraint firstItem="8WS-Sd-fIr" firstAttribute="top" secondItem="4CE-Qh-oOp" secondAttribute="bottom" constant="48" id="nUU-Bo-vEP"/>
-                            <constraint firstItem="EfP-4H-lwo" firstAttribute="centerX" secondItem="LdW-HI-1QW" secondAttribute="centerX" id="nmz-ni-UB2"/>
-                            <constraint firstItem="OB5-Sk-Jvl" firstAttribute="leading" secondItem="nVq-m2-QVd" secondAttribute="leading" constant="112" id="wC3-FQ-5WI"/>
                             <constraint firstItem="C4v-DG-KCp" firstAttribute="top" secondItem="8WS-Sd-fIr" secondAttribute="bottom" constant="8" id="z3P-8W-Eto"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PXU-Bf-he4"/>
+                    <navigationItem key="navigationItem" title="메인" id="PXU-Bf-he4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lag-mP-I7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709.5999999999999" y="-27.339901477832512"/>
+            <point key="canvasLocation" x="1709.1603053435115" y="-27.464788732394368"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="aEz-ur-oa3">
@@ -1219,28 +1205,8 @@
                     <view key="view" contentMode="scaleToFill" id="iqT-iB-Lap">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pigImg" translatesAutoresizingMaskIntoConstraints="NO" id="zH4-Ni-RGk">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cid-4k-Z5D">
-                                <rect key="frame" x="36" y="713" width="88" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="차트 보기"/>
-                                <connections>
-                                    <segue destination="2HN-cw-Uhc" kind="show" destinationCreationSelector="MovetoChart:" id="KZK-UV-gXX"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sxk-fj-WzG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="zH4-Ni-RGk" firstAttribute="top" secondItem="sxk-fj-WzG" secondAttribute="top" id="4yr-UY-jEa"/>
-                            <constraint firstItem="zH4-Ni-RGk" firstAttribute="leading" secondItem="sxk-fj-WzG" secondAttribute="leading" id="Pin-z3-Vt6"/>
-                            <constraint firstItem="zH4-Ni-RGk" firstAttribute="trailing" secondItem="sxk-fj-WzG" secondAttribute="trailing" id="axD-0S-FXG"/>
-                            <constraint firstItem="zH4-Ni-RGk" firstAttribute="bottom" secondItem="sxk-fj-WzG" secondAttribute="bottom" id="rwQ-KP-MPu"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="K3L-V6-oo5"/>
                 </viewController>
@@ -1272,16 +1238,45 @@
             </objects>
             <point key="canvasLocation" x="4194" y="-373"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="IEd-le-dyy">
+        <!--차트-->
+        <scene sceneID="hNc-Ke-lre">
             <objects>
-                <hostingController storyboardIdentifier="ChartViewController" id="2HN-cw-Uhc" customClass="ChartViewController" customModule="WHAT_IS_MONEY" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="AU0-zI-ApY"/>
-                    <navigationItem key="navigationItem" id="tk7-kq-m56"/>
-                </hostingController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l7I-os-OG6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="ChartViewController" id="4Xb-Xo-tQ3" customClass="ChartViewController" customModule="WHAT_IS_MONEY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TE0-cZ-frp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cm8-fb-fqF">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <connections>
+                                    <segue destination="c2Q-Nm-H0M" kind="embed" destinationCreationSelector="showChartView:" id="1gz-PJ-1wk"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SkL-2i-myb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cm8-fb-fqF" firstAttribute="top" secondItem="SkL-2i-myb" secondAttribute="top" id="HaS-0W-PSn"/>
+                            <constraint firstItem="cm8-fb-fqF" firstAttribute="leading" secondItem="SkL-2i-myb" secondAttribute="leading" id="Jxw-Kw-4AM"/>
+                            <constraint firstItem="SkL-2i-myb" firstAttribute="trailing" secondItem="cm8-fb-fqF" secondAttribute="trailing" id="c0q-5J-caD"/>
+                            <constraint firstItem="SkL-2i-myb" firstAttribute="bottom" secondItem="cm8-fb-fqF" secondAttribute="bottom" id="lMA-1E-qiG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="차트" id="pjP-lf-jo4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s3P-jZ-wyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4193" y="975"/>
+            <point key="canvasLocation" x="2276" y="1259"/>
+        </scene>
+        <!--차트-->
+        <scene sceneID="Mkm-YH-UAD">
+            <objects>
+                <hostingController title="차트" id="c2Q-Nm-H0M" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="inA-ON-YCa"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S4D-sm-WDX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3036" y="1210"/>
         </scene>
         <!--기록-->
         <scene sceneID="JS0-H7-TKd">
@@ -1898,7 +1893,6 @@
         <image name="pigImg" width="404" height="688"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="point" width="84" height="90"/>
-        <image name="sunset" catalog="system" width="128" height="97"/>
         <image name="스크린샷 2023-01-03 오후 5.19.34" width="268" height="252"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
