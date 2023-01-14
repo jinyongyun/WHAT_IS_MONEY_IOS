@@ -17,10 +17,17 @@ struct recordforaday {
     var category = String()
     var price = String()
 }
+
+
+
 class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var RecordTableView: UITableView!
+    @objc func arrowClicked() {
+        print("clickeddd")
+    }
     
-   
+
+    @IBOutlet weak var RecordTableView: UITableView!
+
     var recordViewData = [recordData(date: "2023.01.06", records: [recordforaday(sort: "지출", category: "쇼핑", price: "37,720"),recordforaday(sort: "지출", category: "교통", price: "17,720"),recordforaday(sort: "저축", category: "용돈", price: "15,020")]),recordData(date: "2023.01.07", records: [recordforaday(sort: "지출", category: "쇼핑", price: "37,720"),recordforaday(sort: "지출", category: "식비", price: "17,720"),recordforaday(sort: "저축", category: "용돈", price: "15,020")]),recordData(date: "2023.01.08", records: [recordforaday(sort: "지출", category: "쇼핑", price: "37,720"),recordforaday(sort: "지출", category: "식비", price: "17,720"),recordforaday(sort: "저축", category: "용돈", price: "15,020")]),recordData(date: "2023.01.10", records: [recordforaday(sort: "지출", category: "쇼핑", price: "37,720"),recordforaday(sort: "지출", category: "식비", price: "17,720"),recordforaday(sort: "저축", category: "용돈", price: "15,020")])]
    
     override func viewDidLoad() {
@@ -31,6 +38,9 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
         RecordTableView.dataSource = self
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        _ = segue.destination as? RecordDetailViewController
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recordViewData.count
     }
@@ -38,6 +48,7 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordTableViewCell", for: indexPath) as! RecordTableViewCell
         
+        cell.arrowButton.addTarget(self, action: #selector(arrowClicked), for: .touchUpInside)
         cell.DateCell.text = recordViewData[indexPath.row].date
         cell.firstSortLabel.text = recordViewData[indexPath.row].records[0].sort
         cell.firstCategoryLabel.text = recordViewData[indexPath.row].records[0].category
@@ -48,11 +59,35 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.thirdSortLabel.text = recordViewData[indexPath.row].records[2].sort
         cell.thirdCategoryLabel.text = recordViewData[indexPath.row].records[2].category
         cell.thirdPriceLabel.text = recordViewData[indexPath.row].records[2].price
+        
+        //cell.delegate = self
+        cell.arrowButton.tag = indexPath.row
+        //cell.arrowButton.addTarget(self, action: #selector(arrowClicked), for: .touchUpInside)
+      
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+            
+            tableView.deselectRow(at: indexPath, animated: true)
+            print("clickedd")
+            performSegue(withIdentifier: "RecordDetailView", sender: indexPath)
+//            let vc = RecordDetailViewController(nibName: "RecordDetailViewController", bundle: nil)
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: true, completion: nil)
+        }
+   
     
 
     
     
 }
+//extension RecordViewController: ArrowClickedDelegate {
+//    func presentToRecordDetailViewController() {
+//         let vc = self.storyboard?.instantiateViewController(withIdentifier: "RecordDetailViewController") as? RecordDetailViewController
+//
+//        self.navigationController?.pushViewController(vc!, animated: true)
+//
+//
+//
+//    }
+//}

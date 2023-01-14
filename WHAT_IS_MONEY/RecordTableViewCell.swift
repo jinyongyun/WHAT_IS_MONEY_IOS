@@ -7,6 +7,9 @@
 
 import UIKit
 
+protocol ArrowClickedDelegate {
+    func presentToRecordDetailViewController()
+}
 class RecordTableViewCell: UITableViewCell {
 
     @IBOutlet weak var DateCell: UILabel!
@@ -19,6 +22,9 @@ class RecordTableViewCell: UITableViewCell {
     @IBOutlet weak var thirdSortLabel: UILabel!
     @IBOutlet weak var thirdCategoryLabel: UILabel!
     @IBOutlet weak var thirdPriceLabel: UILabel!
+    @IBOutlet weak var arrowButton: UIButton!
+    
+    //public var delegate : ArrowClickedDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,8 +36,21 @@ class RecordTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    @IBAction func arrowClicked(_ sender: UIButton) {
+//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+//        super.init(style: style, reuseIdentifier: reuseIdentifier)
+//        self.arrowButton.addTarget(self, action: #selector(arrowClicked), for: .touchUpInside)
+//    }
+//    required init?(coder: NSCoder) {
+//        super.init(coder: coder)
+//    }
+
+    @objc func arrowClicked() {
         print("clicked")
+
+        //self.delegate?.presentToRecordDetailViewController()
+
+//        let vc = RecordDetailViewController(nibName: "RecordDetailViewController", bundle: nil)
+//        vc.modalPresentationStyle = .fullScreen
+        //self.present(vc, animated: true, completion: nil)
     }
 }

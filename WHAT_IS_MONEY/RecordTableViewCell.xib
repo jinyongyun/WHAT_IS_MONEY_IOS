@@ -153,6 +153,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="DateCell" destination="k28-wH-ovr" id="Xuf-e8-sVg"/>
+                <outlet property="arrowButton" destination="Sa3-HK-Vlv" id="5gA-SO-3KC"/>
                 <outlet property="firstCategoryLabel" destination="eN3-tm-75c" id="oYH-NK-HwD"/>
                 <outlet property="firstPriceLabel" destination="QMY-EW-ZWb" id="VI7-n8-Yhe"/>
                 <outlet property="firstSortLabel" destination="mXE-R5-1II" id="2PI-Vh-ByA"/>
