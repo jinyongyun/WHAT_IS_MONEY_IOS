@@ -85,12 +85,12 @@ class LoginViewController: UIViewController {
         }
         else {
             shakeTextField(textField: IDInput)
-            let emailLabel = UILabel(frame: CGRect(x: 40, y: 305, width: 312, height: 30))
-            emailLabel.text = "이메일 형식을 확인해 주세요"
-            emailLabel.textColor = UIColor.red
-            emailLabel.tag = 100
-            
-            self.view.addSubview(emailLabel)
+//            let emailLabel = UILabel(frame: CGRect(x: 40, y: 305, width: 312, height: 30))
+//            emailLabel.text = "이메일 형식을 확인해 주세요"
+//            emailLabel.textColor = UIColor.red
+//            emailLabel.tag = 100
+//
+//            self.view.addSubview(emailLabel)
         } //email 형식 오류
         
         if userModel.isValidPassword(pwd: password) {
@@ -100,12 +100,12 @@ class LoginViewController: UIViewController {
         }
         else {
             shakeTextField(textField: PWInput)
-            let passwordLabel = UILabel(frame: CGRect(x: 40, y: 360, width: 312, height: 30))
-            passwordLabel.text = "비밀번호 형식을 확인해 주세요"
-            passwordLabel.textColor = UIColor.red
-            passwordLabel.tag = 101
-            
-            self.view.addSubview(passwordLabel)
+//            let passwordLabel = UILabel(frame: CGRect(x: 40, y: 360, width: 312, height: 30))
+//            passwordLabel.text = "비밀번호 형식을 확인해 주세요"
+//            passwordLabel.textColor = UIColor.red
+//            passwordLabel.tag = 101
+//
+//            self.view.addSubview(passwordLabel)
         }
         if userModel.isValidEmail(id: id) && userModel.isValidPassword(pwd: password) {
             let loginSuccess: Bool = loginCheck(id: id, pwd: password)

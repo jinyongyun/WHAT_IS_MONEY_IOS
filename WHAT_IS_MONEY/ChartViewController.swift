@@ -9,17 +9,15 @@ import UIKit
 import SwiftUI
 
 class ChartViewController: UIViewController {
-
-   
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-
+    @IBSegueAction func showChartView(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder, rootView: ChartView())
+    }
+    
    
 }
 
