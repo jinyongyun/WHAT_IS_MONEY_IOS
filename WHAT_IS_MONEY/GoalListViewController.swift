@@ -12,6 +12,7 @@ class GoalListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    
     @IBOutlet weak var dropView: UIView!
     
     @IBOutlet weak var tfInput: UITextField!
@@ -22,11 +23,25 @@ class GoalListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configurenavigationbar()
         self.initUI()
         self.setDropdown()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
     }
+    
+    
+    func configurenavigationbar(){
+        let addgoal = UIAction(title: "목표 추가하기", handler: { _ in print("목표 추가하기") })
+        let deletegoal = UIAction(title: "목표 삭제하기", handler: { _ in print("목표 삭제하기") })
+        let buttonMenu = UIMenu(title: "메뉴 타이틀", children: [addgoal, deletegoal])
+       
+        
+    }
+        
+  
+    
     
     let dropdown = DropDown()
 
@@ -80,6 +95,12 @@ var itemList = ["최신순", "오래된순"]
           // 아이콘 이미지를 변경하여 DropDown이 펼쳐진 것을 표현
           self.ivIcon.image = UIImage.init(named: "DropDownDown")
     }
+    
+    
+    
+    
+    
+    
     
     
 }

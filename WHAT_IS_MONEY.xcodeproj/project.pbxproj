@@ -16,6 +16,7 @@
 		15279A55296D71CD00C14AC6 /* RecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15279A53296D71CD00C14AC6 /* RecordTableViewCell.xib */; };
 		15279A57296ED3F000C14AC6 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15279A56296ED3F000C14AC6 /* ChartViewController.swift */; };
 		15279A59296ED6EB00C14AC6 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15279A58296ED6EB00C14AC6 /* ChartView.swift */; };
+		3E130B4D2977B44100D63CF9 /* GoalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E130B4C2977B44100D63CF9 /* GoalDetailViewController.swift */; };
 		3E18F0672976E48F008C5B5E /* GoalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18F0662976E48F008C5B5E /* GoalListViewController.swift */; };
 		3E1B0A4F2963044D0092B6E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B0A4E2963044D0092B6E3 /* AppDelegate.swift */; };
 		3E1B0A512963044D0092B6E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B0A502963044D0092B6E3 /* SceneDelegate.swift */; };
@@ -49,6 +50,7 @@
 		15279A53296D71CD00C14AC6 /* RecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTableViewCell.xib; sourceTree = "<group>"; };
 		15279A56296ED3F000C14AC6 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		15279A58296ED6EB00C14AC6 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		3E130B4C2977B44100D63CF9 /* GoalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewController.swift; sourceTree = "<group>"; };
 		3E18F0662976E48F008C5B5E /* GoalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListViewController.swift; sourceTree = "<group>"; };
 		3E1B0A4B2963044D0092B6E3 /* WHAT_IS_MONEY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHAT_IS_MONEY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1B0A4E2963044D0092B6E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				3E2421BD2976DAE1004B8052 /* GOAL.swift */,
 				3E2421BF2976DC82004B8052 /* GoalListCell.swift */,
 				3E18F0662976E48F008C5B5E /* GoalListViewController.swift */,
+				3E130B4C2977B44100D63CF9 /* GoalDetailViewController.swift */,
 			);
 			path = WHAT_IS_MONEY;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				3E1B0A75296579C80092B6E3 /* ProfileEditViewController.swift in Sources */,
 				3E2421BE2976DAE1004B8052 /* GOAL.swift in Sources */,
 				15279A4B2969D4A700C14AC6 /* AgreePrivacyPolicyViewController.swift in Sources */,
+				3E130B4D2977B44100D63CF9 /* GoalDetailViewController.swift in Sources */,
 				15279A452969CB2700C14AC6 /* LoginViewController.swift in Sources */,
 				3EB4E0ED2970339F006EF640 /* Record.swift in Sources */,
 				3E7D8BBE2965AD360032EA4B /* QuestionViewController.swift in Sources */,
