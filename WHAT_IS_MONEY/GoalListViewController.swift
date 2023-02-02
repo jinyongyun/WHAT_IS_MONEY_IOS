@@ -1,9 +1,3 @@
-//
-//  GoalListViewController.swift
-//  WHAT_IS_MONEY
-//
-//  Created by jinyong yun on 2023/01/17.
-//
 import Foundation
 import UIKit
 import DropDown
@@ -411,8 +405,10 @@ extension GoalListViewController: UITableViewDataSource {
         let goalIdx = self.goalList[indexPath.row].id
         deletegoal(goalIdx: goalIdx)
         self.goalList.remove(at: indexPath.row)
+        self.tableView.reloadData()
 
     }
     
     
 }
+

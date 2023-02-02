@@ -67,7 +67,8 @@ class WelcomeViewController: UIViewController {
 
                         let result = jsonObject["result"] as? String
                         //let result = jsonObject ["result"] as? [String: Any],
-                        print(result)
+                        print(result!)
+
                         self.IntroLabel.text = result
 
                     } catch {
