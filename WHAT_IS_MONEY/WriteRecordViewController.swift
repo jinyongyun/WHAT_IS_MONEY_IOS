@@ -66,6 +66,7 @@ class WriteRecordViewController: UIViewController {
     var itemList1: [String] = []
     
     override func viewWillAppear(_ animated: Bool) {
+        TokenClass.handlingToken()
         loadcategory()
         setDropdown()
     }

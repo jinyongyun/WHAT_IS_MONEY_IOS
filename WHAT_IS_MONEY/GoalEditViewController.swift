@@ -56,6 +56,7 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
     var oldImage: String?
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillappear")
+        TokenClass.handlingToken()
         print(goalIdx as Any)
         self.loadgoal()
     }

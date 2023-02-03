@@ -58,6 +58,7 @@ class FixedRecordViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         print("viewwillappear")
+        TokenClass.handlingToken()
         self.getRecord()
     }
     

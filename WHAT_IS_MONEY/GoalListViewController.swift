@@ -43,6 +43,7 @@ class GoalListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         print("viewwillappear")
+        TokenClass.handlingToken()
         getGoalList()
         tableView.reloadData()
     }

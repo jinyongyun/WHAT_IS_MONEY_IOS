@@ -25,7 +25,9 @@ class ProfileEditViewController: UIViewController {
     
      
     override func viewWillAppear(_ animated: Bool) {
+        TokenClass.handlingToken()
     }
+
      
      
      

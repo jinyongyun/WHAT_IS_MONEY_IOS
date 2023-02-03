@@ -42,7 +42,9 @@ class WholeSettingViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-    self.navigationController?.navigationBar.isHidden = false
+       
+        self.navigationController?.navigationBar.isHidden = false
+        TokenClass.handlingToken()
     }
     func getUserInfo() {
         let useridx = UserDefaults.standard.integer(forKey: "userIdx")

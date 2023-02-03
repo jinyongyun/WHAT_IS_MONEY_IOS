@@ -40,6 +40,9 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
         
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        TokenClass.handlingToken()
+    }
     
     func postGoal() {
         

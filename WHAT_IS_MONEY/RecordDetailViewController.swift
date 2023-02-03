@@ -61,6 +61,7 @@ class RecordDetailViewController: UIViewController {
     private var recordList = [resultlist]() //
     
     override func viewWillAppear(_ animated: Bool) {
+        TokenClass.handlingToken()
         getrecordList()
         tableView.reloadData()
         DateTextField.text = recordDate

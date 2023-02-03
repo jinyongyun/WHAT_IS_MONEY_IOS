@@ -57,10 +57,12 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
     /*[resultone(date: "2023.01.06", records: [recordforaday(sort: "지출", category: "쇼핑", price: "37,720"),recordforaday(sort: "지출", category: "교통", price: "17,720"),recordforaday(sort: "저축", category: "용돈", price: "15,020")]),recordData(date: "2023.01.07", records: [recordforaday(sort: "지출", category: "쇼핑", price: "37,720"),recordforaday(sort: "지출", category: "식비", price: "17,720"),recordforaday(sort: "저축", category: "용돈", price: "15,020")]),recordData(date: "2023.01.08", records: [recordforaday(sort: "지출", category: "쇼핑", price: "37,720"),recordforaday(sort: "지출", category: "식비", price: "17,720"),recordforaday(sort: "저축", category: "용돈", price: "15,020")]),recordData(date: "2023.01.10", records: [recordforaday(sort: "지출", category: "쇼핑", price: "37,720"),recordforaday(sort: "지출", category: "식비", price: "17,720"),recordforaday(sort: "저축", category: "용돈", price: "15,020")])]*/
    
     override func viewWillAppear(_ animated: Bool) {
+        TokenClass.handlingToken()
         print(goalIdx as Any)
         self.loadrecordlist()
         RecordTableView.reloadData()
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadrecordlist()
@@ -205,10 +207,10 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
             //cell.arrowButton.tag = indexPath.row
             //cell.arrowButton.addTarget(self, action: #selector(arrowClicked), for: .touchUpInside)
             
-            /*
+            
                 cell.thirdSortLabel.isHidden = true
                 cell.thirdCategoryLabel.isHidden = true
-                cell.thirdPriceLabel.isHidden = true  */
+                cell.thirdPriceLabel.isHidden = true
             
             return cell
             
@@ -222,8 +224,9 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             cell.firstCategoryLabel.text = recorddata.records[0].category
             cell.firstPriceLabel.text = String(recorddata.records[0].amount)
+           
 
-           /*
+           
                    cell.secondSortLabel.isHidden = true
                 cell.secondCategoryLabel.isHidden = true
                 cell.secondPriceLabel.isHidden = true
@@ -233,7 +236,7 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 cell.thirdCategoryLabel.isHidden = true
                 cell.thirdPriceLabel.isHidden = true
            
-            */
+            
             
             return cell
             

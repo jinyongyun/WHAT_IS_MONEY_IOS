@@ -47,6 +47,7 @@ class GoalDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         print("viewwillappear")
+        TokenClass.handlingToken()
         print(goalIdx)
         getGoal()
     }
