@@ -149,7 +149,7 @@ class WriteRecordViewController: UIViewController {
                             return
                         }
                         
-                        print(String(data: data, encoding: .utf8)!)
+                       // print(String(data: data, encoding: .utf8)!)
                         
                         
                         
@@ -161,12 +161,12 @@ class WriteRecordViewController: UIViewController {
                         let decoder = JSONDecoder()
                         if let json = try? decoder.decode(categoryresult.self, from: data) {
                             self.resultlist =  json.result
-                            print("*******")
-                            print(self.resultlist)
-                            print("*******")
+                            //print("*******")
+                            //print(self.resultlist)
+                            //print("*******")
                             observeresultlist()
-                            print(itemList0)
-                            print(itemList1)
+                           // print(itemList0)
+                            //print(itemList1)
                         }
                         
                     }.resume() //URLSession - end

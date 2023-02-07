@@ -150,7 +150,7 @@ class FixedRecordViewController: UIViewController {
                          return
                      }
                      
-                     print(String(data: data, encoding: .utf8)!)
+                    // print(String(data: data, encoding: .utf8)!)
                      guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                          print("Error: HTTP request failed")
                          return
@@ -193,7 +193,7 @@ class FixedRecordViewController: UIViewController {
                                                   return
                                               }
                                               
-                                              print(String(data: data, encoding: .utf8)!)
+                                             // print(String(data: data, encoding: .utf8)!)
                                               
                                               
                                               

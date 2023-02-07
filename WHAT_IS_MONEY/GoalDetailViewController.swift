@@ -37,6 +37,7 @@ class GoalDetailViewController: UIViewController {
     
     @IBOutlet weak var currentamountlabel: UILabel!
     
+    @IBOutlet weak var initialamountLabel: UILabel!
     
     @IBOutlet weak var goalImageView: UIImageView!
     
@@ -44,6 +45,8 @@ class GoalDetailViewController: UIViewController {
     var goalIdx: Int = 0
     var goaldetail: goalresult?
     var goaldeleteresponse: goaldeleteresponse?
+    
+    var goalanimationflag: Int = 0
     
     override func viewWillAppear(_ animated: Bool) {
         print("viewwillappear")
@@ -118,7 +121,7 @@ class GoalDetailViewController: UIViewController {
                             return
                         }
                         
-                        print(String(data: data, encoding: .utf8)!)
+                        //print(String(data: data, encoding: .utf8)!)
                         
                         guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                             print("Error: HTTP request failed")
@@ -164,10 +167,10 @@ class GoalDetailViewController: UIViewController {
                             print("Error: Did not receive data")
                             return
                         }
-                        print("\n\n\n\n\n\n\n\n")
+                        /*print("\n\n\n\n\n\n\n\n")
                         print("삭제왜안돼")
                         print(String(data: data, encoding: .utf8)!)
-                        print("\n\n\n\n\n\n\n\n")
+                        print("\n\n\n\n\n\n\n\n")*/
                         guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                             print("Error: HTTP request failed")
                             return
@@ -192,10 +195,13 @@ class GoalDetailViewController: UIViewController {
         let data = Data(base64Encoded: goaldetail?.image ?? "알 수 없음", options: .ignoreUnknownCharacters) ?? Data()
         let decodeImg = UIImage(data: data)?.resized(toWidth: 240)
         goalImageView.image = decodeImg
-        progressView.progress = Float(goaldetail?.progress ?? 0.0)
-        progresspercentageLabel.text = String(goaldetail?.progress ?? 0.0) + "%"
+        //goalImageView.alpha = CGFloat((goaldetail?.progress ?? 0.0) / 100)
+        //progressView.progress = Float(goaldetail?.progress ?? 0.0)
+        progressView.setProgress((goaldetail?.progress ?? 0.0)/100 , animated: true)
+        progresspercentageLabel.text = "\(String(goaldetail?.progress ?? 0.0))%"
         goalamountlabel.text = String(goaldetail?.goal_amount ?? 0)
         currentamountlabel.text = String(goaldetail?.amount ?? 0)
+        initialamountLabel.text = String(goaldetail?.init_amount ?? 0)
         
     }
     
