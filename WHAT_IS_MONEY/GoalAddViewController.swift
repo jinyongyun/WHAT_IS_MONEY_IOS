@@ -44,6 +44,8 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
     }
     
     
+    
+    
     // MARK: - [URL Session Post 멀티 파트 사진 데이터 업로드]
        func requestPOST() {
            
@@ -61,7 +63,7 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
            
            // MARK: [URL 지정 실시]
            let urlComponents = URLComponents(string: "https://www.pigmoney.xyz/goal/uploadGoalImage/\(goalIdx!)/\(userIdx)")
-           print(urlComponents as Any)
+           print("\n\n\n여기가 마지막 보루다!!:", urlComponents as Any)
            // [boundary 설정 : 바운더리 라인 구분 필요 위함]
            let boundary = "Boundary-\(UUID().uuidString)" // 고유값 지정
            
@@ -219,7 +221,7 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
 
     
     
-    func postGoal() {
+    func postGoal(){
         
         // 넣는 순서도 순서대로여야 하는 것 같다.
         let goal = Goal(goal_amount: Int(GoalPriceTextField.text ?? "0")!, init_amount: Int(InitPriceTextField.text ?? "0")!, category_name: GoalTextField.text ?? "디폴트 골", date: Date().toString())
@@ -243,46 +245,50 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
         request.httpBody = uploadData
         print(String(data: uploadData, encoding: .utf8)!)
         
+        
+        //let semaphore = DispatchSemaphore(value: 0)
+        
         // URLSession 객체를 통해 전송, 응답값 처리
-        DispatchQueue.global().async {
-            do{
                 
-                let task = URLSession.shared.uploadTask(with: request, from: uploadData) { (data, response, error) in
-                    
-                    // 서버가 응답이 없거나 통신이 실패
-                    if let e = error {
-                        NSLog("An error has occured: \(e.localizedDescription)")
-                        return
-                    }
-                    // 응답 처리 로직
-                    guard let data = data else {
-                        print("Error: Did not receive data")
-                        return
-                    }
-                    
-                    print(String(data: data, encoding: .utf8)!)
-                    
-                    guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
-                        print("Error: HTTP request failed")
-                        return
-                    }
-                    
-                    // data
-                    let decoder = JSONDecoder()
-                    if let json = try? decoder.decode(responseP.self, from: data) {
-                        DispatchQueue.main.async {
-                            
-                            self.goalIdx = json.result.goalIdx
-                            print("goalIdx:" , self.goalIdx)
-                            
-                        }
-                    }
-                }
-                // POST 전송
-                task.resume()
-                
+       URLSession.shared.uploadTask(with: request, from: uploadData) { (data, response, error) in
+            
+            // 서버가 응답이 없거나 통신이 실패
+            if let e = error {
+                NSLog("An error has occured: \(e.localizedDescription)")
+                return
             }
-        }
+            // 응답 처리 로직
+            guard let data = data else {
+                print("Error: Did not receive data")
+                return
+            }
+            
+            print(String(data: data, encoding: .utf8)!)
+            
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
+                print("Error: HTTP request failed")
+                return
+            }
+            
+            // data
+            let decoder = JSONDecoder()
+            if let json = try? decoder.decode(responseP.self, from: data) {
+                // DispatchQueue.main.async {
+                
+                self.goalIdx = json.result.goalIdx
+                print("goalIdx:" , self.goalIdx as Any)
+                
+                //}
+            }
+            
+            
+            
+            
+            
+            
+        }.resume()
+            
+              
         
     }
         
@@ -355,7 +361,7 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
                 print("====================================")
                 print("")
                 
-                img = (img as? UIImage)!
+                img = (img as? UIImage)!.resized(toWidth: 240.0) ?? img
                 let newimg = (img as? UIImage)!.resized(toWidth: 90.0) ?? img
                 ImgUI.layer.cornerRadius = ImgUI.layer.frame.size.width / 2
                 ImgUI.setImage(newimg as? UIImage, for: .normal)
@@ -381,9 +387,29 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
     
     @IBAction func tapRegisterButton(_ sender: UIButton) {
         postGoal()
-        print(goalIdx)
-        requestPOST()
-        self.navigationController?.popViewController(animated: true)
+        
+        self.progressStart(onView: self.view)
+               
+               
+               // [일정 시간 후 작업 수행 : 로딩 프로그레스 종료 호출]
+         DispatchQueue.main.asyncAfter(deadline: .now() + 10) { // [6초 후에 동작 실시]
+                   print("")
+                   print("===============================")
+                   print("[ViewController >> viewDidLoad() :: 시간 만료]")
+                   print("===============================")
+                   print("")
+                   self.progressStop()
+               }
+
+      
+        
+        print("goalIdx는 이거다!!: ", goalIdx as Any)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3){
+            self.requestPOST()
+            self.navigationController?.popViewController(animated: true)
+        }
+    
         
     }
  

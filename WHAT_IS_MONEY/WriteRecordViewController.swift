@@ -388,8 +388,15 @@ class WriteRecordViewController: UIViewController {
     
     @IBAction func tapRegisterButton(_ sender: UIButton) { // 4. 각 변수들을 상수로 만들고 그 상수들을 record(각자 화면의 정보를 담을 구조체) 객체화 시킨 다음
         self.postRecord()
-        self.navigationController?.popViewController(animated: true) //6. 이전 화면으로 화면 전환
-        
+        if flag == 1 {
+            guard let consumeViewController = self.storyboard?.instantiateViewController(withIdentifier: "ConsumeViewController") as? ConsumeViewController else {return}
+            consumeViewController.goalIdx = self.goalIdx
+            consumeViewController.recordDate = self.RegisterCellDatePicker.date.toString()
+            self.navigationController?.pushViewController(consumeViewController, animated: true)
+            
+        } else {
+            self.navigationController?.popViewController(animated: true) //6. 이전 화면으로 화면 전환
+        }
     }
     
     @IBAction func AddCategory(_ sender: UIButton) {
