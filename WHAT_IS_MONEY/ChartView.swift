@@ -41,7 +41,7 @@ struct PieChart: View {
     @State private var selectedCell: UUID = UUID()
     @EnvironmentObject var network: Network
     
-    let dataModel: LastChartDataModel
+    let dataModel: ChartDataModel
     
     let onTap: (ChartCellModel?) -> ()
   
@@ -70,39 +70,7 @@ struct PieChart: View {
     
    
 }
-struct ThisPieChart: View {
-    @State private var selectedCell: UUID = UUID()
-    @EnvironmentObject var network: Network
-    
-    let dataModel: ThisChartDataModel
-    
-    let onTap: (ChartCellModel?) -> ()
-  
-    
-    var body: some View {
 
-            ZStack {
-                ForEach(dataModel.chartCellModel) { dataSet in
-                    PieChartCell(startAngle: self.dataModel.angle(for: CGFloat(dataSet.value)), endAngle: self.dataModel.startingAngle)
-                        .foregroundColor(dataSet.color)
-                       .onTapGesture {
-                         withAnimation {
-                            if self.selectedCell == dataSet.id {
-                                self.onTap(nil)
-                                self.selectedCell = UUID()
-                            } else {
-                                self.selectedCell = dataSet.id
-                                self.onTap(dataSet)
-                            }
-                        }
-                    }.scaleEffect((self.selectedCell == dataSet.id) ? 1.05 : 1.0)
-                }
-            }
-    }
-
-    
-   
-}
 
 
 struct ChartView: View {
@@ -130,7 +98,7 @@ struct ChartView: View {
                 }
                 HStack(spacing: 20){
                     
-                    PieChart(dataModel: LastChartDataModel.init(dataModel: network.lastMonth), onTap: {
+                    PieChart(dataModel: ChartDataModel.init(dataModel: network.lastMonth), onTap: {
                         dataModel in
                         if let dataModel = dataModel {
                             self.selectedPie = "종류: \(dataModel.name)\n비율: \(dataModel.value)%"
@@ -181,7 +149,7 @@ struct ChartView: View {
                 }
                     
                     HStack(spacing: 20){
-                        ThisPieChart(dataModel: ThisChartDataModel.init(dataModel: network.thisMonth), onTap: {
+                        PieChart(dataModel: ChartDataModel.init(dataModel: network.thisMonth), onTap: {
                             dataModel in
                             if let dataModel = dataModel {
                                 self.thisSelectedPie = "종류: \(dataModel.name)\n비율: \(dataModel.value)%"
@@ -237,7 +205,9 @@ class Network: ObservableObject {
     @Published var this_new_val: Float = 0
     
     func loadLastChartData() {
-
+        self.lastMonth = []
+        self.sum = 0
+        self.new_val = 0
         let useridx = UserDefaults.standard.integer(forKey: "userIdx")
         if let url = URL(string: "https://www.pigmoney.xyz/chart/last/\(useridx)"){
             
@@ -269,7 +239,7 @@ class Network: ObservableObject {
                             lastChartViewData =  json.result
                         }
                         print("last month's Chart Data.result :",lastChartViewData)
-                        lastMonth = []
+                       // lastMonth = []
                         for (idx, res) in lastChartViewData.enumerated(){
                             self.sum += res.total_amount
                             print("idx, res", idx, Color_Cat[idx],res.category_name, res.total_amount)
@@ -288,7 +258,9 @@ class Network: ObservableObject {
     }
     
     func loadThisChartData() {
-
+        self.thisMonth = []
+        self.this_sum = 0
+        self.this_new_val = 0
         let useridx = UserDefaults.standard.integer(forKey: "userIdx")
         if let url = URL(string: "https://www.pigmoney.xyz/chart/\(useridx)"){
             
@@ -321,7 +293,7 @@ class Network: ObservableObject {
                         }
                         print("this month's Chart Data.result :",thisChartViewData)
                         //chartViewData <= sampleArray
-                        self.thisMonth = []
+                       // self.thisMonth = []
                         for (idx, res) in thisChartViewData.enumerated(){
                             self.this_sum += res.total_amount
                             print("idx, res", idx, Color_Cat[idx],res.category_name, res.total_amount)
@@ -345,7 +317,7 @@ class Network: ObservableObject {
         }
     }
 }
-final class LastChartDataModel: ObservableObject {
+final class ChartDataModel: ObservableObject {
     
     @EnvironmentObject var network: Network
     var chartCellModel: [ChartCellModel]
@@ -375,36 +347,7 @@ final class LastChartDataModel: ObservableObject {
         return lastBarEndAngle
     }
 }
-final class ThisChartDataModel: ObservableObject {
-    
-    @EnvironmentObject var network: Network
-    var chartCellModel: [ChartCellModel]
-    var startingAngle = Angle(degrees: 0)
-    private var lastBarEndAngle = Angle(degrees: 0)
-     
-  
-    
-    init(dataModel: [ChartCellModel]) {
-        chartCellModel = dataModel
-     
-    }
-     
-    var totalValue: CGFloat {
-        return CGFloat((chartCellModel.reduce(0) { (result, data) -> Int in
-            Int(result) + data.value
-          
-        }))
-    }
-     
-    func angle(for value: CGFloat) -> Angle {
-        if startingAngle != lastBarEndAngle {
-            startingAngle = lastBarEndAngle
-        }
-        lastBarEndAngle += Angle(degrees: Double(value / totalValue) * 360 )
-//        print("lastBarAngle", lastBarEndAngle)
-        return lastBarEndAngle
-    }
-}
+
 
 let Color_Cat = ["NPeach", "NOrange", "NYellow", "NGreen", "NBlue"]
 
