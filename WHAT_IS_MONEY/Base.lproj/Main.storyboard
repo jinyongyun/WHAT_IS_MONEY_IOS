@@ -1175,55 +1175,6 @@
             </objects>
             <point key="canvasLocation" x="8512.7999999999993" y="-373.15270935960592"/>
         </scene>
-        <!--Consume View Controller-->
-        <scene sceneID="RIj-4n-6Fg">
-            <objects>
-                <viewController storyboardIdentifier="ConsumeViewController" id="DfD-vL-Mcq" customClass="ConsumeViewController" customModule="WHAT_IS_MONEY" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mQl-eC-NIL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UsN-Ki-YtZ" customClass="GIFImageView" customModule="Gifu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUo-oR-J22">
-                                <rect key="frame" x="32" y="682" width="311" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="75c-87-seo"/>
-                                    <constraint firstAttribute="width" constant="311" id="xi4-H1-pZF"/>
-                                </constraints>
-                                <color key="tintColor" red="0.98823529409999999" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="스킵">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
-                                    <color key="baseBackgroundColor" red="0.71739645929850127" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="TapSkipButton:" destination="DfD-vL-Mcq" eventType="touchUpInside" id="ErQ-FE-D4O"/>
-                                    <action selector="tapRegisterButton:" destination="uyV-It-98s" eventType="touchUpInside" id="VZr-fo-KBa"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="gz1-er-AC7"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="gz1-er-AC7" firstAttribute="bottom" secondItem="FUo-oR-J22" secondAttribute="bottom" constant="37" id="8Dc-UU-R3T"/>
-                            <constraint firstItem="FUo-oR-J22" firstAttribute="leading" secondItem="gz1-er-AC7" secondAttribute="leading" constant="32" id="JUN-UE-cPa"/>
-                            <constraint firstItem="UsN-Ki-YtZ" firstAttribute="trailing" secondItem="gz1-er-AC7" secondAttribute="trailing" id="KXg-wB-pDj"/>
-                            <constraint firstItem="gz1-er-AC7" firstAttribute="trailing" secondItem="FUo-oR-J22" secondAttribute="trailing" constant="32" id="THi-Da-ebZ"/>
-                            <constraint firstItem="UsN-Ki-YtZ" firstAttribute="top" secondItem="mQl-eC-NIL" secondAttribute="top" id="cp4-Em-PzM"/>
-                            <constraint firstItem="UsN-Ki-YtZ" firstAttribute="leading" secondItem="gz1-er-AC7" secondAttribute="leading" id="nS6-HR-I8Y"/>
-                            <constraint firstAttribute="bottom" secondItem="UsN-Ki-YtZ" secondAttribute="bottom" id="pNf-gn-uyn"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="gifImageView" destination="UsN-Ki-YtZ" id="Y5Z-7p-4Nx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aJE-cE-ZnY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="9302" y="-374"/>
-        </scene>
         <!--Fixed Record View Controller-->
         <scene sceneID="0AD-DN-Kpf">
             <objects>
@@ -1800,7 +1751,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVv-Wi-n5E">
-                                <rect key="frame" x="119" y="600" width="49" height="21"/>
+                                <rect key="frame" x="119" y="599.66666666666663" width="49" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1852,7 +1803,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66V-Ia-FQp">
-                                <rect key="frame" x="119" y="651.33333333333337" width="49" height="21"/>
+                                <rect key="frame" x="119" y="651" width="49" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -3101,6 +3052,105 @@
             </objects>
             <point key="canvasLocation" x="6363" y="367"/>
         </scene>
+        <!--Consume View Controller-->
+        <scene sceneID="Jy5-hp-BDc">
+            <objects>
+                <viewController storyboardIdentifier="ConsumeViewController" id="t12-h4-K4B" customClass="ConsumeViewController" customModule="WHAT_IS_MONEY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I0m-Q5-SEt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zun-iW-mkO" customClass="GIFImageView" customModule="Gifu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSp-uc-zQ1">
+                                <rect key="frame" x="32" y="682" width="311" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="Ems-jt-cBQ"/>
+                                    <constraint firstAttribute="height" constant="59" id="WV4-GS-cqH"/>
+                                </constraints>
+                                <color key="tintColor" red="0.98823529409999999" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="스킵">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="baseBackgroundColor" red="0.71739645929999996" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="TapSkipButton:" destination="t12-h4-K4B" eventType="touchUpInside" id="GUh-P3-PML"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edb-JL-W6w">
+                                <rect key="frame" x="-20" y="151" width="451" height="483"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCO-5s-9Cj">
+                                        <rect key="frame" x="122" y="193" width="170" height="170"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ib9-af-2Cs">
+                                                <rect key="frame" x="5" y="5" width="160" height="160"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="벽돌프레임" translatesAutoresizingMaskIntoConstraints="NO" id="Q0D-lQ-OT0">
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yZl-nG-qoE" customClass="GIFImageView" customModule="Gifu">
+                                        <rect key="frame" x="20" y="233" width="135" height="175"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="175" id="Qic-gV-uFk"/>
+                                            <constraint firstAttribute="width" constant="135" id="c5L-dE-P8f"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="amh-FF-BC6" customClass="GIFImageView" customModule="Gifu">
+                                        <rect key="frame" x="212" y="8" width="231" height="475"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="231" id="UWE-8C-XpG"/>
+                                            <constraint firstAttribute="height" constant="475" id="znT-Br-Bya"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="amh-FF-BC6" firstAttribute="top" secondItem="edb-JL-W6w" secondAttribute="top" constant="8" id="0Ws-8O-Ksr"/>
+                                    <constraint firstAttribute="bottom" secondItem="yZl-nG-qoE" secondAttribute="bottom" constant="75" id="5tm-Mn-nNa"/>
+                                    <constraint firstAttribute="bottom" secondItem="XCO-5s-9Cj" secondAttribute="bottom" constant="120" id="B9R-D5-S6p"/>
+                                    <constraint firstItem="amh-FF-BC6" firstAttribute="leading" secondItem="yZl-nG-qoE" secondAttribute="trailing" constant="57" id="B9b-n5-mT4"/>
+                                    <constraint firstItem="XCO-5s-9Cj" firstAttribute="leading" secondItem="edb-JL-W6w" secondAttribute="leading" constant="122" id="PJb-9J-8lC"/>
+                                    <constraint firstAttribute="trailing" secondItem="XCO-5s-9Cj" secondAttribute="trailing" constant="159" id="Wsh-O8-oIV"/>
+                                    <constraint firstAttribute="width" constant="451" id="kFO-Sd-r4m"/>
+                                    <constraint firstAttribute="trailing" secondItem="amh-FF-BC6" secondAttribute="trailing" constant="8" id="kh8-JY-2Ah"/>
+                                    <constraint firstAttribute="height" constant="483" id="mBc-VH-yaT"/>
+                                    <constraint firstItem="XCO-5s-9Cj" firstAttribute="top" secondItem="edb-JL-W6w" secondAttribute="top" constant="193" id="me3-Cc-HRO"/>
+                                    <constraint firstAttribute="bottom" secondItem="amh-FF-BC6" secondAttribute="bottom" id="p7W-R7-4HF"/>
+                                    <constraint firstItem="yZl-nG-qoE" firstAttribute="leading" secondItem="edb-JL-W6w" secondAttribute="leading" constant="20" symbolic="YES" id="qRQ-7w-7HW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7lc-NF-QZG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zun-iW-mkO" firstAttribute="leading" secondItem="7lc-NF-QZG" secondAttribute="leading" id="76J-c7-TyP"/>
+                            <constraint firstItem="zun-iW-mkO" firstAttribute="trailing" secondItem="7lc-NF-QZG" secondAttribute="trailing" id="AUa-t7-evy"/>
+                            <constraint firstItem="zun-iW-mkO" firstAttribute="top" secondItem="I0m-Q5-SEt" secondAttribute="top" id="HKe-gW-fc5"/>
+                            <constraint firstItem="7lc-NF-QZG" firstAttribute="bottom" secondItem="mSp-uc-zQ1" secondAttribute="bottom" constant="37" id="LP4-aK-LTv"/>
+                            <constraint firstItem="mSp-uc-zQ1" firstAttribute="leading" secondItem="7lc-NF-QZG" secondAttribute="leading" constant="32" id="M2U-Jx-jKr"/>
+                            <constraint firstItem="mSp-uc-zQ1" firstAttribute="top" secondItem="edb-JL-W6w" secondAttribute="bottom" constant="48" id="Qb2-lz-dZj"/>
+                            <constraint firstAttribute="bottom" secondItem="zun-iW-mkO" secondAttribute="bottom" id="dVV-5t-ywX"/>
+                            <constraint firstItem="7lc-NF-QZG" firstAttribute="trailing" secondItem="mSp-uc-zQ1" secondAttribute="trailing" constant="32" id="jSM-ik-GXP"/>
+                            <constraint firstItem="edb-JL-W6w" firstAttribute="leading" secondItem="I0m-Q5-SEt" secondAttribute="leadingMargin" constant="-36" id="rMi-Xx-aI7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="WolfgifImageView" destination="amh-FF-BC6" id="GHC-xu-zxe"/>
+                        <outlet property="crygifImageView" destination="yZl-nG-qoE" id="Htv-at-NTv"/>
+                        <outlet property="gifImageView" destination="zun-iW-mkO" id="ZeY-nY-8hn"/>
+                        <outlet property="goalImageView" destination="ib9-af-2Cs" id="Oqq-IA-rUO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qoa-SQ-xhR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9301.6000000000004" y="-374.6305418719212"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Chart" width="26" height="26"/>
@@ -3117,6 +3167,7 @@
         <image name="person" width="128" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="point" width="84" height="90"/>
+        <image name="벽돌프레임" width="655" height="655"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
