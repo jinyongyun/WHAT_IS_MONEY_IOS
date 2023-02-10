@@ -1,5 +1,6 @@
 import UIKit
 import Gifu
+import AVFoundation
 
 class ConsumeViewController: UIViewController {
     
@@ -15,6 +16,25 @@ class ConsumeViewController: UIViewController {
     var recordDate: String?
     var goalIdx: Int?
     var goaldetail: goalresult?
+    
+    
+    var audioPlayer: AVAudioPlayer?
+    let url = Bundle.main.url(forResource: "늑대배경음악", withExtension: "mp3")!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        do {
+             try audioPlayer = AVAudioPlayer(contentsOf: url)
+             }catch {
+                fatalError()
+             }
+        audioPlayer?.prepareToPlay()
+        audioPlayer?.play()
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        audioPlayer?.stop()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
