@@ -45,11 +45,11 @@ class ConsumeViewController: UIViewController {
         crygifImageView.animate(withGIFNamed: "우는돼지")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) { // [6초 후에 동작 실시]
-            guard let recordViewController = self.storyboard?.instantiateViewController(withIdentifier: "RecordViewController") as? RecordViewController else {return}
+            guard let goaldetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "GoalDetailViewController") as? GoalDetailViewController else {return}
             let goalIdx = self.goalIdx
-           recordViewController.goalIdx = goalIdx
-            print(recordViewController.goalIdx as Any)
-            self.navigationController?.pushViewController(recordViewController, animated: true)
+            goaldetailViewController.goalIdx = goalIdx ?? 0
+            print(goaldetailViewController.goalIdx as Any)
+            self.navigationController?.pushViewController(goaldetailViewController, animated: true)
               }
         
         
@@ -102,11 +102,11 @@ class ConsumeViewController: UIViewController {
     }
     
     @IBAction func TapSkipButton(_ sender: UIButton) {
-        guard let recordViewController = self.storyboard?.instantiateViewController(withIdentifier: "RecordViewController") as? RecordViewController else {return}
+        guard let goaldetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "GoalDetailViewController") as? GoalDetailViewController else {return}
         let goalIdx = self.goalIdx
-       recordViewController.goalIdx = goalIdx
-        print(recordViewController.goalIdx as Any)
-        self.navigationController?.pushViewController(recordViewController, animated: true)
+        goaldetailViewController.goalIdx = goalIdx ?? 0
+        print(goaldetailViewController.goalIdx as Any)
+        self.navigationController?.pushViewController(goaldetailViewController, animated: true)
         
     }
     
