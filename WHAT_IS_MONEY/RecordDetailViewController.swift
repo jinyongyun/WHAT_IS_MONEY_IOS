@@ -68,7 +68,6 @@ class RecordDetailViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(recordList)
         tableView.dataSource = self
         tableView.delegate = self
         DateTextField.delegate = self
@@ -102,7 +101,6 @@ class RecordDetailViewController: UIViewController, UITextFieldDelegate {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue( UserDefaults.standard.string(forKey: "accessToken") ?? "0", forHTTPHeaderField: "X-ACCESS-TOKEN")
         
-        //print(String(data: uploadData, encoding: .utf8)!)
         
         DispatchQueue.global().async {
             do {
@@ -121,10 +119,6 @@ class RecordDetailViewController: UIViewController, UITextFieldDelegate {
                         return
                     }
                     
-                    //vprint("이거 확인")
-                    //print(String(data: data, encoding: .utf8)!)
-                    
-                    //print(String(data: data, encoding: .utf8)!)
                     guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                         print("Error: HTTP request failed")
                         return
@@ -134,9 +128,6 @@ class RecordDetailViewController: UIViewController, UITextFieldDelegate {
                     let decoder = JSONDecoder()
                     if let json = try? decoder.decode(response1.self, from: data) {
                         self.recordList = json.result.records
-                        //print("+++++++++++++++++")
-                        //print(self.recordList)
-                        //print("+++++++++++++")
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
@@ -180,8 +171,7 @@ class RecordDetailViewController: UIViewController, UITextFieldDelegate {
                         print("Error: Did not receive data")
                         return
                     }
-                    print("deleterecordlist")
-                    //print(String(data: data, encoding: .utf8)!)
+                   
                     
                     guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                         print("Error: HTTP request failed")
@@ -233,7 +223,6 @@ extension RecordDetailViewController: UITableViewDelegate {
         let recordIdx = self.recordList[indexPath.row].recordIdx
         fixedRecordViewController.recordIdx = recordIdx
         fixedRecordViewController.flag = self.recordList[indexPath.row].type
-        print(fixedRecordViewController.recordIdx as Any)
         self.navigationController?.pushViewController(fixedRecordViewController, animated: true)
     }
     

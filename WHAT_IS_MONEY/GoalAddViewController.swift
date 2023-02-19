@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVFoundation
+import Photos
 
 
 struct responseP: Codable {
@@ -74,16 +76,11 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
            
            // MARK: [URL 지정 실시]
            let urlComponents = URLComponents(string: "https://www.pigmoney.xyz/goal/uploadGoalImage/\(goalIdx!)/\(userIdx)")
-           print("\n\n\n여기가 마지막 보루다!!:", urlComponents as Any)
+           
            // [boundary 설정 : 바운더리 라인 구분 필요 위함]
            let boundary = "Boundary-\(UUID().uuidString)" // 고유값 지정
            
-           print("")
-           print("====================================")
-           print("[A_Image >> requestPOST() :: 바운더리 라인 구분 확인 실시]")
-           print("boundary :: ", boundary)
-           print("====================================")
-           print("")
+          
            
            
            // [http 통신 타입 및 헤더 지정 실시]
@@ -102,14 +99,7 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
            // [멀티 파트 전송 파라미터 삽입 : 딕셔너리 for 문 수행]
            for (key, value) in reqestParam {
                if "\(key)" == "\(file)" { // MARK: [사진 파일 인 경우]
-                   print("")
-                   print("====================================")
-                   print("[A_Image >> requestPOST() :: 멀티 파트 전송 파라미터 확인 실시]")
-                   print("타입 :: ", "사진 파일")
-                   print("key :: ", key)
-                   print("value :: ", value)
-                   print("====================================")
-                   print("")
+                  
                    
                    uploadData.append(boundaryPrefix.data(using: .utf8)!)
                    uploadData.append("Content-Disposition: form-data; name=\"\(file)\"; filename=\"\(file)\"\r\n".data(using: .utf8)!) // [파라미터 key 지정]
@@ -119,14 +109,7 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
                    uploadData.append("--\(boundary)--".data(using: .utf8)!)
                }
                else { // MARK: [일반 파라미터인 경우]
-                   print("")
-                   print("====================================")
-                   print("[A_Image >> requestPOST() :: 멀티 파트 전송 파라미터 확인 실시]")
-                   print("타입 :: ", "일반 파라미터")
-                   print("key :: ", key)
-                   print("value :: ", value)
-                   print("====================================")
-                   print("")
+                  
                    
                    uploadData.append(boundaryPrefix.data(using: .utf8)!)
                    uploadData.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: .utf8)!) // [파라미터 key 지정]
@@ -137,13 +120,6 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
            
            
            // [http 요쳥을 위한 URLSessionDataTask 생성]
-           print("")
-           print("====================================")
-           print("[A_Image >> requestPOST() :: 사진 업로드 요청 실시]")
-           print("url :: ", requestURL)
-           print("uploadData :: ", uploadData)
-           print("====================================")
-           print("")
            
            // MARK: [URLSession uploadTask 수행 실시]
            let dataTask = URLSession(configuration: .default)
@@ -153,12 +129,7 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
 
                // [error가 존재하면 종료]
                guard error == nil else {
-                   print("")
-                   print("====================================")
-                   print("[A_Image >> requestPOST() :: 사진 업로드 요청 실패]")
-                   print("fail : ", error?.localizedDescription ?? "")
-                   print("====================================")
-                   print("")
+                   
                    return
                }
 
@@ -166,14 +137,7 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
                let successsRange = 200..<300
                guard let statusCode = (response as? HTTPURLResponse)?.statusCode, successsRange.contains(statusCode)
                else {
-                   print("")
-                   print("====================================")
-                   print("[A_Image >> requestPOST() :: 사진 업로드 요청 에러]")
-                   print("error : ", (response as? HTTPURLResponse)?.statusCode ?? 0)
-                   print("allHeaderFields : ", (response as? HTTPURLResponse)?.allHeaderFields ?? "")
-                   print("msg : ", (response as? HTTPURLResponse)?.description ?? "")
-                   print("====================================")
-                   print("")
+                   
                    return
                }
 
@@ -182,48 +146,20 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
                let resultLen = data! // 데이터 길이
                do {
                    guard let jsonConvert = try JSONSerialization.jsonObject(with: data!) as? [String: Any] else {
-                       print("")
-                       print("====================================")
-                       print("[A_Image >> requestPOST() :: 사진 업로드 요청 에러]")
-                       print("error : ", "json 형식 데이터 convert 에러")
-                       print("====================================")
-                       print("")
+                       
                        return
                    }
                    guard let JsonResponse = try? JSONSerialization.data(withJSONObject: jsonConvert, options: .prettyPrinted) else {
-                       print("")
-                       print("====================================")
-                       print("[A_Image >> requestPOST() :: 사진 업로드 요청 에러]")
-                       print("error : ", "json 형식 데이터 변환 에러")
-                       print("====================================")
-                       print("")
+                       
                        return
                    }
                    guard let resultString = String(data: JsonResponse, encoding: .utf8) else {
-                       print("")
-                       print("====================================")
-                       print("[A_Image >> requestPOST() :: 사진 업로드 요청 에러]")
-                       print("error : ", "json 형식 데이터 >> String 변환 에러")
-                       print("====================================")
-                       print("")
+                      
                        return
                    }
-                   print("")
-                   print("====================================")
-                   print("[A_Image >> requestPOST() :: 사진 업로드 요청 성공]")
-                   print("allHeaderFields : ", (response as? HTTPURLResponse)?.allHeaderFields ?? "")
-                   print("resultCode : ", resultCode)
-                   print("resultLen : ", resultLen)
-                   print("resultString : ", resultString)
-                   print("====================================")
-                   print("")
+                  
                } catch {
-                   print("")
-                   print("====================================")
-                   print("[A_Image >> requestPOST() :: 사진 업로드 요청 에러]")
-                   print("error : ", "Trying to convert JSON data to string")
-                   print("====================================")
-                   print("")
+                  
                    return
                }
            }.resume()
@@ -304,37 +240,73 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
     }
         
         
-        
         func openLibrary(){
             
-            picker.sourceType = .photoLibrary
+          
+                PHPhotoLibrary.requestAuthorization( { [self] status in
+                    switch status{
+                    case .authorized:
+                        print("Album: 권한 허용")
+                        DispatchQueue.main.sync {
+                            self.picker.sourceType = .photoLibrary
+                            present(picker, animated: false, completion: nil)
+                        }
+                    case .denied:
+                        print("Album: 권한 거부")
+                        DispatchQueue.main.sync {
+                            
+                            let alert = UIAlertController(title: "앨범권한거부", message: "앨범 접근에 대한 권한이 거부됐습니다.(권한 변경은 아이폰 설정에서!)", preferredStyle: .alert)
+                            let ok =  UIAlertAction(title: "확인", style: .cancel)
+                            alert.addAction(ok)
+                            present(alert, animated: true, completion: nil)
+                            
+                        }
+                    case .restricted, .notDetermined:
+                        print("Album: 선택하지 않음")
+                        
+                    default:
+                        break
+                    }
+                })
             
-            present(picker, animated: false, completion: nil)
+            
+          
             
         }
         
         func openCamera(){
             
-            if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+           // if(UIImagePickerController .isSourceTypeAvailable(.camera)){
                 
-                picker.sourceType = .camera
+           
+                AVCaptureDevice.requestAccess(for: .video, completionHandler: { [self] (granted: Bool) in
+                    if granted {
+                        print("Camera: 권한 허용")
+                        DispatchQueue.main.sync {
+                            self.picker.sourceType = .camera
+                            present(picker, animated: false, completion: nil)
+                        }
+                    } else {
+                        print("Camera: 권한 거부")
+                        DispatchQueue.main.sync {
+                            let alert = UIAlertController(title: "카메라접근권한거부", message: "카메라 접근에 대한 권한이 거부됐습니다.(권한 변경은 아이폰 설정에서!)", preferredStyle: .alert)
+                            let ok =  UIAlertAction(title: "확인", style: .cancel)
+                            alert.addAction(ok)
+                            present(picker, animated: true, completion: nil)
+                        }
+                    }
+                })
                 
-                present(picker, animated: false, completion: nil)
-                
-            }
             
-            else{
-                
-                print("Camera not available")
-                
-            }
-            
+               
+          
         }
         
         @IBAction func TapImgUIButton(_ sender: UIButton) {
             
-            let alert =  UIAlertController(title: "원하는 타이틀", message: "원하는 메세지", preferredStyle: .actionSheet)
-            let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
+            let alert =  UIAlertController(title: "목표사진선택", message: "원하는 목표 사진을 선택해주세요", preferredStyle: .actionSheet)
+            let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in
+                self.openLibrary()
             }
             let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
                 
@@ -365,29 +337,16 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
             if var img = info[UIImagePickerController.InfoKey.originalImage]{
                 //img = img.resized(toWidth: 90.0) ?? img
                 // [앨범에서 선택한 사진 정보 확인]
-                print("")
-                print("====================================")
-                print("[A_Image >> imagePickerController() :: 앨범에서 선택한 사진 정보 확인 및 사진 표시 실시]")
-                print("[사진 정보 :: ", info)
-                print("====================================")
-                print("")
                 
                 img = (img as? UIImage)!.resized(toWidth: 240.0) ?? img
                 let newimg = (img as? UIImage)!.resized(toWidth: 90.0) ?? img
                 ImgUI.layer.cornerRadius = ImgUI.layer.frame.size.width / 2
                 ImgUI.setImage(newimg as? UIImage, for: .normal)
-                // [이미지 뷰에 앨범에서 선택한 사진 표시 실시]
-                //self.imageView.image = img as? UIImage
-                //imagepickButton.setImage((img as! UIImage), for: .normal)
-                
-                // [이미지 데이터에 선택한 이미지 지정 실시]
+            
                 self.imageData = (img as? UIImage)!.jpegData(compressionQuality: 0.8) as NSData? // jpeg 압축 품질 설정
                 
                 
-                // [멀티파트 서버에 사진 업로드 수행]
-               /* DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // [1초 후에 동작 실시]
-                    self.requestPOST()
-                } */
+              
             }
             // [이미지 파커 닫기 수행]
             dismiss(animated: true, completion: nil)
@@ -423,17 +382,12 @@ class GoalAddViewController: UIViewController, UINavigationControllerDelegate & 
                
                // [일정 시간 후 작업 수행 : 로딩 프로그레스 종료 호출]
          DispatchQueue.main.asyncAfter(deadline: .now() + 10) { // [6초 후에 동작 실시]
-                   print("")
-                   print("===============================")
-                   print("[ViewController >> viewDidLoad() :: 시간 만료]")
-                   print("===============================")
-                   print("")
                    self.progressStop()
                }
 
       
         
-        print("goalIdx는 이거다!!: ", goalIdx as Any)
+
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3){
             self.requestPOST()

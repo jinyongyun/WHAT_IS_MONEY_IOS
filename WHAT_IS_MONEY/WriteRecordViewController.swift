@@ -160,7 +160,7 @@ class WriteRecordViewController: UIViewController, UITextFieldDelegate {
                             return
                         }
                         
-                       // print(String(data: data, encoding: .utf8)!)
+                       
                         
                         
                         
@@ -172,12 +172,9 @@ class WriteRecordViewController: UIViewController, UITextFieldDelegate {
                         let decoder = JSONDecoder()
                         if let json = try? decoder.decode(categoryresult.self, from: data) {
                             self.resultlist =  json.result
-                            //print("*******")
-                            //print(self.resultlist)
-                            //print("*******")
+                           
                             observeresultlist()
-                           // print(itemList0)
-                            //print(itemList1)
+                           
                         }
                         
                     }.resume() //URLSession - end
@@ -207,7 +204,7 @@ class WriteRecordViewController: UIViewController, UITextFieldDelegate {
         request.setValue( UserDefaults.standard.string(forKey: "accessToken") ?? "0", forHTTPHeaderField: "X-ACCESS-TOKEN")
         request.httpBody = uploadData
         
-        print(String(data: uploadData, encoding: .utf8)!)
+        
         
         DispatchQueue.global().async {
             do {
@@ -226,9 +223,7 @@ class WriteRecordViewController: UIViewController, UITextFieldDelegate {
                         return
                     }
                     
-                    print("**************응답데이터*****************")
-                    print(String(data: data, encoding: .utf8)!)
-                    print("**************응답데이터*****************")
+                  
                     
                     guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                         print("Error: HTTP request failed")
@@ -269,7 +264,7 @@ class WriteRecordViewController: UIViewController, UITextFieldDelegate {
         request.setValue( UserDefaults.standard.string(forKey: "accessToken") ?? "0", forHTTPHeaderField: "X-ACCESS-TOKEN")
         
         request.httpBody = uploadData
-        print(String(data: uploadData, encoding: .utf8)!)
+        
         
         DispatchQueue.global().async {
             do {
@@ -281,10 +276,7 @@ class WriteRecordViewController: UIViewController, UITextFieldDelegate {
                         NSLog("An error has occured: \(e.localizedDescription)")
                         return
                     }
-                    // 응답 처리 로직
-                    // guard let data = data else { return }
                     
-                    // data
                     
                     
                     
@@ -399,8 +391,6 @@ class WriteRecordViewController: UIViewController, UITextFieldDelegate {
         moneyAmount = MoneyTextField.text ?? nil
         
         if moneyAmount?.isEmpty ?? true || categorytype?.isEmpty ?? true {
-            print(moneyAmount?.isEmpty as Any)
-            print(categorytype?.isEmpty as Any)
             let sheet = UIAlertController(title: "경고", message: "모든 입력칸에 올바르게 입력하였는지 확인해주세요", preferredStyle: .alert)
             sheet.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in print("빈 입력칸 확인") }))
             present(sheet, animated: true)
@@ -428,7 +418,7 @@ class WriteRecordViewController: UIViewController, UITextFieldDelegate {
             self.postcategory(newcategoryname: alert.textFields?[0].text ?? "알 수 없음")
             self.setDropdown()
                 }
-        let cancelAction = UIAlertAction(title: "삭제", style: .cancel)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
         alert.addAction(addAction)
         alert.addAction(cancelAction)
         present(alert, animated: false, completion: nil)

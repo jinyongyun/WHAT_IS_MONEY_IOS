@@ -20,11 +20,6 @@ extension UIViewController {
     // MARK: [원형 프로그레스 시작 메소드]
     // [호출 방법 : self.progressStart(onView: self.view)]
     func progressStart(onView : UIView) {
-        print("")
-        print("===============================")
-        print("[S_Extension >> progressStart() :: 로딩 프로그레스 시작 실시]")
-        print("===============================")
-        print("")
         // [프로그레스를 담는 부모 뷰 : 검정색]
         let progressView = UIView.init(frame: onView.bounds)
         progressView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
@@ -64,11 +59,6 @@ extension UIViewController {
     // MARK: [원형 프로그레스 종료 메소드]
     // [호출 방법 : self.progressStop()]
     func progressStop() {
-        print("")
-        print("===============================")
-        print("[S_Extension >> progressStop() :: 로딩 프로그레스 종료 실시]")
-        print("===============================")
-        print("")
         DispatchQueue.main.async {
             vProgress?.removeFromSuperview() // 뷰에서 제거 실시
             vProgress = nil

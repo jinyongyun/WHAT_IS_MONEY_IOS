@@ -14,12 +14,5 @@ struct Goal: Codable {
     var category_name: String
     var date: String
     
-    /*
-var userIdx: Int
-var init_amount: Int
-var goal_amount: Int
-var GoalName: String
-var GoalImage: String
-     */
     
 }

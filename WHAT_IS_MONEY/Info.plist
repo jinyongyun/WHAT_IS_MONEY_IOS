@@ -21,5 +21,11 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>프로필 사진 및 목표 이미지 설정을 변경하려면 사진 앨범 액세스 허용 버튼을 클릭하십시오. 자세한 내용은 개인 정보 보호 정책을 참조하십시오.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>프로필 사진 및 목표 이미지 설정을 변경하려면 사진 앨범 액세스 허용 버튼을 클릭하십시오. 자세한 내용은 개인 정보 보호 정책을 참조하십시오.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>프로필 사진 및 목표 이미지 설정을 변경하려면 사진 앨범 액세스 허용 버튼을 클릭하십시오. 자세한 내용은 개인 정보 보호 정책을 참조하십시오.</string>
 </dict>
 </plist>

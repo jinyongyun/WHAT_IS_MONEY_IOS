@@ -79,14 +79,12 @@ class GoalDetailViewController: UIViewController {
         gifImageView.animate(withGIFNamed: "목표화면배경3")
         gifImageView2.animate(withGIFNamed: "돼지뚝딱")
         getGoal()
-        print(goaldetail?.category_name as Any)
         configureView()
       
         let showrecords = UIAction(title: "기록 보기", handler: { _ in
             guard let recordViewController = self.storyboard?.instantiateViewController(withIdentifier: "RecordViewController") as? RecordViewController else {return}
             let goalIdx = self.goalIdx
            recordViewController.goalIdx = goalIdx
-            print(recordViewController.goalIdx as Any)
            
             self.navigationController?.pushViewController(recordViewController, animated: true)})
         
@@ -102,11 +100,9 @@ class GoalDetailViewController: UIViewController {
             guard let goalEditViewController = self.storyboard?.instantiateViewController(withIdentifier: "GoalEditViewController") as? GoalEditViewController else {return}
             let goalIdx = self.goalIdx
             
-            print(self.goalIdx)
             
            goalEditViewController.goalIdx = goalIdx
             
-            print(goalEditViewController.goalIdx as Any)
             
             self.navigationController?.pushViewController(goalEditViewController, animated: true)
         })
@@ -144,7 +140,6 @@ class GoalDetailViewController: UIViewController {
                             return
                         }
                         
-                        print("getgoall:" ,String(data: data, encoding: .utf8)!)
                         
                         guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                             print("Error: HTTP request failed")
@@ -154,11 +149,11 @@ class GoalDetailViewController: UIViewController {
                         let decoder = JSONDecoder()
                         if let json = try? decoder.decode(goalresponse.self, from: data) {
                             self.goaldetail =  json.result
-                            print(goaldetail as Any)
+                          
                             DispatchQueue.main.async {
                                 self.configureView()
                             }
-                            print("goaldetail!!!", goaldetail as Any)
+                            
                         }
                         
                     }.resume() //URLSession - end
@@ -191,10 +186,7 @@ class GoalDetailViewController: UIViewController {
                             print("Error: Did not receive data")
                             return
                         }
-                        /*print("\n\n\n\n\n\n\n\n")
-                        print("삭제왜안돼")
-                        print(String(data: data, encoding: .utf8)!)
-                        print("\n\n\n\n\n\n\n\n")*/
+            
                         guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                             print("Error: HTTP request failed")
                             return
@@ -217,10 +209,9 @@ class GoalDetailViewController: UIViewController {
     func configureView(){
         goalnameLabel.text = goaldetail?.category_name
         let data = Data(base64Encoded: goaldetail?.image ?? "알 수 없음", options: .ignoreUnknownCharacters) ?? Data()
-        let decodeImg = UIImage(data: data)?.resized(toWidth: 143)
+        let decodeImg = UIImage(data: data)?.resized(toWidth: 144)
         goalImageView.image = decodeImg
-        //goalImageView.alpha = CGFloat((goaldetail?.progress ?? 0.0) / 100)
-        //progressView.progress = Float(goaldetail?.progress ?? 0.0)
+        
         progressView.setProgress((goaldetail?.progress ?? 0.0)/100 , animated: true)
         progresspercentageLabel.text = "\(String(goaldetail?.progress ?? 0.0))%"
         goalamountlabel.text = String(goaldetail?.goal_amount ?? 0)

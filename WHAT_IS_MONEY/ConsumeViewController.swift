@@ -39,7 +39,6 @@ class ConsumeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getGoal()
-        print("늑대2\n\n\n\n", goalIdx as Any)
         gifImageView.animate(withGIFNamed: "늑대배경2")
         WolfgifImageView.animate(withGIFNamed: "늑대애니메이션2")
         crygifImageView.animate(withGIFNamed: "우는돼지")
@@ -75,7 +74,6 @@ class ConsumeViewController: UIViewController {
                             return
                         }
                         
-                        print("getgoall:" ,String(data: data, encoding: .utf8)!)
                         
                         guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                             print("Error: HTTP request failed")
@@ -85,13 +83,12 @@ class ConsumeViewController: UIViewController {
                         let decoder = JSONDecoder()
                         if let json = try? decoder.decode(goalresponse.self, from: data) {
                             self.goaldetail =  json.result
-                            print(goaldetail as Any)
                             DispatchQueue.main.async { [self] in
                                 let data = Data(base64Encoded: self.goaldetail?.image ?? "알수없음", options: .ignoreUnknownCharacters) ?? Data()
                                     let decodeImg = UIImage(data: data)
                                 goalImageView.image = decodeImg?.resized(toWidth: 170)
                             }
-                            print("goaldetail!!!", goaldetail as Any)
+                            
                         }
                         
                     }.resume() //URLSession - end
@@ -105,7 +102,6 @@ class ConsumeViewController: UIViewController {
         guard let goaldetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "GoalDetailViewController") as? GoalDetailViewController else {return}
         let goalIdx = self.goalIdx
         goaldetailViewController.goalIdx = goalIdx ?? 0
-        print(goaldetailViewController.goalIdx as Any)
         self.navigationController?.pushViewController(goaldetailViewController, animated: true)
         
     }

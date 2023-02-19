@@ -43,7 +43,6 @@ class GoalListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        print("viewwillappear")
         TokenClass.handlingToken()
         
         //guard let goaldetailviewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "GoalDetailViewController") else {return}
@@ -89,24 +88,20 @@ class GoalListViewController: UIViewController {
                             return
                         }
                         
-                        print(String(data: data, encoding: .utf8)!)
                         
                         
                         guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                             print("Error: HTTP request failed")
                             return
                         }
-                        //                    goallistresponse.self
+                     
                         let decoder = JSONDecoder()
                         if let json = try? decoder.decode(goallistresponse.self, from: data) {
-                            print("\n\n\njson\n\n\n\n",json)
-                            print("\n\n\nmessage!!!!!\n\n\n",json.message)
                             self.goalList = json.result
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
                             }
-                            print("goalList!!!!",self.goalList)
-                           // print(self.goalList.count)
+                           
                         } else {
                             print("wrong!!!")
                         }
@@ -143,24 +138,22 @@ class GoalListViewController: UIViewController {
                             return
                         }
                         
-                        //print(String(data: data, encoding: .utf8)!)
+                        
                         
                         
                         guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                             print("Error: HTTP request failed")
                             return
                         }
-                        //                    goallistresponse.self
+                   
                         let decoder = JSONDecoder()
                         if let json = try? decoder.decode(goallistresponse.self, from: data) {
-                            //print("\n\n\njson\n\n\n\n",json)
-                            //print("\n\n\nmessage!!!!!\n\n\n",json.message)
+                          
                             self.goalList = json.result
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
                             }
-                             print("goalList!!!!",self.goalList)
-                            // print(self.goalList.count)
+                           
                         } else {
                             print("wrong!!!")
                         }
@@ -197,22 +190,20 @@ class GoalListViewController: UIViewController {
                             return
                         }
                         
-                        print(String(data: data, encoding: .utf8)!)
+                        
                         guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                             print("Error: HTTP request failed")
                             return
                         }
-                        //                    goallistresponse.self
+                        
                         let decoder = JSONDecoder()
                         if let json = try? decoder.decode(goallistresponse.self, from: data) {
-                           // print("\n\n\njson\n\n\n\n",json)
-                            print("\n\n\nmessage!!!!!\n\n\n",json.message)
+                           
                             self.goalList = json.result
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
                             }
-                            //print("goalList!!!!",self.goalList)
-                            //print(self.goalList.count)
+                        
                         } else {
                             print("wrong!!!")
                         }
@@ -228,7 +219,6 @@ class GoalListViewController: UIViewController {
     func deletegoal(goalIdx: Int){
         let userIdx = UserDefaults.standard.integer(forKey: "userIdx")
         if let url = URL(string: "https://www.pigmoney.xyz/goal/deleteGoal/\(goalIdx)/\(userIdx)"){
-            print(url)
             var request = URLRequest.init(url: url)
             
             request.httpMethod = "DELETE"
@@ -245,7 +235,7 @@ class GoalListViewController: UIViewController {
                                 return
                             }
                             
-                           // print(String(data: data, encoding: .utf8)!)
+                         
                             
                             
                             guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
@@ -374,7 +364,6 @@ extension GoalListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let GoalDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "GoalDetailViewController") as? GoalDetailViewController else {return}
         GoalDetailViewController.goalIdx = goalList[indexPath.row].id
-        print(goalList[indexPath.row].id)
         self.navigationController?.pushViewController(GoalDetailViewController, animated: true)
     }
     

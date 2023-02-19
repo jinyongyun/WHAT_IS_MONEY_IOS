@@ -119,7 +119,7 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, UITextViewD
                             let sheet = UIAlertController(title: "안내", message: "문의사항이 접수되었습니다", preferredStyle: .alert)
                             self.present(sheet, animated: true)
                             sheet.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ -> Void in
-                                self.navigationController!.popViewController(animated: true)}))
+                                self.navigationController?.popViewController(animated: true)}))
                             
 
                             

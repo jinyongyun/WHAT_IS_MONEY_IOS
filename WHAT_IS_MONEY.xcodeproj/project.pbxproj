@@ -45,8 +45,7 @@
 		3E9A9246299259A10014B58A /* Circularprogress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9A9245299259A10014B58A /* Circularprogress.swift */; };
 		3EB4E0ED2970339F006EF640 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB4E0EC2970339F006EF640 /* Record.swift */; };
 		3EC798EC2993CE3B0060D22A /* ConsumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC798EB2993CE3B0060D22A /* ConsumeViewController.swift */; };
-		3ECCB810299613260086A871 /* 늑대애니메이션.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCB80F299613260086A871 /* 늑대애니메이션.gif */; };
-		3ECCB8122996132C0086A871 /* 우는돼지.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCB8112996132C0086A871 /* 우는돼지.gif */; };
+		3ECB5B2629A1DC8700A96C11 /* 우는돼지.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB5B2529A1DC8700A96C11 /* 우는돼지.gif */; };
 		3ECCB81829962A490086A871 /* 아기돼지공사배경.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCB81729962A490086A871 /* 아기돼지공사배경.mp3 */; };
 		3ECCB81A299635EE0086A871 /* 늑대배경음악.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3ECCB819299635EE0086A871 /* 늑대배경음악.mp3 */; };
 		3EE5DB53296E85A2009E6FA2 /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE5DB52296E85A2009E6FA2 /* RecordDetailViewController.swift */; };
@@ -95,8 +94,7 @@
 		3E9A9245299259A10014B58A /* Circularprogress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circularprogress.swift; sourceTree = "<group>"; };
 		3EB4E0EC2970339F006EF640 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		3EC798EB2993CE3B0060D22A /* ConsumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumeViewController.swift; sourceTree = "<group>"; };
-		3ECCB80F299613260086A871 /* 늑대애니메이션.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "늑대애니메이션.gif"; path = "../../../../Downloads/늑대애니메이션.gif"; sourceTree = "<group>"; };
-		3ECCB8112996132C0086A871 /* 우는돼지.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "우는돼지.gif"; path = "../../../../Downloads/우는돼지.gif"; sourceTree = "<group>"; };
+		3ECB5B2529A1DC8700A96C11 /* 우는돼지.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "우는돼지.gif"; sourceTree = "<group>"; };
 		3ECCB81729962A490086A871 /* 아기돼지공사배경.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "아기돼지공사배경.mp3"; sourceTree = "<group>"; };
 		3ECCB819299635EE0086A871 /* 늑대배경음악.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "늑대배경음악.mp3"; sourceTree = "<group>"; };
 		3EE5DB52296E85A2009E6FA2 /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
@@ -167,9 +165,8 @@
 				3E0A079F2998BBAC0027FF46 /* 목표화면배경3.gif */,
 				3E0A07A32998BBC90027FF46 /* 늑대배경2.gif */,
 				3E0A07A12998BBB80027FF46 /* 돼지뚝딱.gif */,
-				3ECCB80F299613260086A871 /* 늑대애니메이션.gif */,
 				3E0A07A52998BF880027FF46 /* 늑대애니메이션2.gif */,
-				3ECCB8112996132C0086A871 /* 우는돼지.gif */,
+				3ECB5B2529A1DC8700A96C11 /* 우는돼지.gif */,
 				15592C402983943900C678DD /* AlertViewController.swift */,
 				15279A56296ED3F000C14AC6 /* ChartViewController.swift */,
 				155D2C8C29937C0C004334EA /* ChartMainViewController.swift */,
@@ -269,12 +266,11 @@
 				3E1B0A5B2963044E0092B6E3 /* LaunchScreen.storyboard in Resources */,
 				3E0A07A22998BBB80027FF46 /* 돼지뚝딱.gif in Resources */,
 				3E1B0A582963044E0092B6E3 /* Assets.xcassets in Resources */,
-				3ECCB8122996132C0086A871 /* 우는돼지.gif in Resources */,
+				3ECB5B2629A1DC8700A96C11 /* 우는돼지.gif in Resources */,
 				3E0A07A42998BBC90027FF46 /* 늑대배경2.gif in Resources */,
 				3E0A07A02998BBAC0027FF46 /* 목표화면배경3.gif in Resources */,
 				15279A55296D71CD00C14AC6 /* RecordTableViewCell.xib in Resources */,
 				3ECCB81829962A490086A871 /* 아기돼지공사배경.mp3 in Resources */,
-				3ECCB810299613260086A871 /* 늑대애니메이션.gif in Resources */,
 				3ECCB81A299635EE0086A871 /* 늑대배경음악.mp3 in Resources */,
 				3E1B0A562963044D0092B6E3 /* Main.storyboard in Resources */,
 			);
@@ -508,11 +504,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3DL5M9WTXB;
+				DEVELOPMENT_TEAM = KSR8K3JPUM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WHAT_IS_MONEY/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = test;
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = test;
+				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 및 목표 이미지 설정을 변경하려면 카메라 액세스 허용 버튼을 클릭하십시오. 자세한 내용은 개인 정보 보호 정책을 참조하십시오.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 및 목표 이미지 설정을 변경하려면 사진 앨범 액세스 허용 버튼을 클릭하십시오. 자세한 내용은 개인 정보 보호 정책을 참조하십시오.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -523,11 +519,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "WHATISMONEY.WHAT-IS-MONEY2";
+				PRODUCT_BUNDLE_IDENTIFIER = "WHATISMONEY.WHAT-IS-MONEY";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -542,8 +541,8 @@
 				DEVELOPMENT_TEAM = KSR8K3JPUM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WHAT_IS_MONEY/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = test;
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = test;
+				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 및 목표 이미지 설정을 변경하려면 카메라 액세스 허용 버튼을 클릭하십시오. 자세한 내용은 개인 정보 보호 정책을 참조하십시오.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 및 목표 이미지 설정을 변경하려면 사진 앨범 액세스 허용 버튼을 클릭하십시오. 자세한 내용은 개인 정보 보호 정책을 참조하십시오.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -554,11 +553,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "WHATISMONEY.WHAT-IS-MONEY2";
+				PRODUCT_BUNDLE_IDENTIFIER = "WHATISMONEY.WHAT-IS-MONEY";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

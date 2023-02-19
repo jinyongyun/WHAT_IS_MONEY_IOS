@@ -57,7 +57,6 @@ class FixedRecordViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var btnSelect: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
-        print("viewwillappear")
         TokenClass.handlingToken()
         self.getRecord()
     }
@@ -77,7 +76,7 @@ class FixedRecordViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder() // TextField 비활성화
+        textField.resignFirstResponder()
         return true
     }
     
@@ -85,7 +84,7 @@ class FixedRecordViewController: UIViewController, UITextFieldDelegate {
     var goalIdx: Int?
     
     var resultlist: [categoryresultdetail] = []
-    // DropDown 아이템 리스트
+    
     var itemList0: [String] = []
     var itemList1: [String] = []
     
@@ -129,52 +128,44 @@ class FixedRecordViewController: UIViewController, UITextFieldDelegate {
         
     func patchRecord() {
         
-        // 넣는 순서도 순서대로여야 하는 것 같다.
+       
         let patchrecord = patchrecord(userIdx: UserDefaults.standard.integer(forKey: "userIdx"), recordIdx: recordIdx!, date: self.RecordDatePicker.date.toString(), categoryIdx: self.findcategoryid(categoryname: categoryname ?? "알 수 없음"), amount: Int(MoneyTextField.text ?? "0" ) ?? 0)
         
         guard let uploadData = try? JSONEncoder().encode(patchrecord)
         else {return}
         
-        // URL 객체 정의
+        
         let url = URL(string: "https://www.pigmoney.xyz/records")
         
-        // URLRequest 객체를 정의
+        
         var request = URLRequest(url: url!)
         request.httpMethod = "PATCH"
-        // HTTP 메시지 헤더
+        
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue( UserDefaults.standard.string(forKey: "accessToken") ?? "0", forHTTPHeaderField: "X-ACCESS-TOKEN")
         
         DispatchQueue.global().async {
             do {
-                // URLSession 객체를 통해 전송, 응답값 처리
+              
                 URLSession.shared.uploadTask(with: request, from: uploadData) { (data, response, error) in
                     
-                    // 서버가 응답이 없거나 통신이 실패
+                 
                     if let e = error {
                         NSLog("An error has occured: \(e.localizedDescription)")
                         return
                     }
-                       // 응답 처리 로직
+                       
                      guard let data = data else {
                          print("Error: Did not receive data")
                          return
                      }
                      
-                    // print(String(data: data, encoding: .utf8)!)
+                    
                      guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                          print("Error: HTTP request failed")
                          return
                      }
-                     /*
-                     // data
-                     let decoder = JSONDecoder()
-                     if let json = try? decoder.decode(responseP.self, from: data) {
-                     print(json.result.goalIdx)
-                     }
-                     
-                     */
-                    // POST 전송
+                
                 }.resume()
             }
         }
@@ -204,7 +195,7 @@ class FixedRecordViewController: UIViewController, UITextFieldDelegate {
                                                   return
                                               }
                                               
-                                             // print(String(data: data, encoding: .utf8)!)
+                                             
                                               
                                               
                                               
@@ -271,39 +262,35 @@ class FixedRecordViewController: UIViewController, UITextFieldDelegate {
     
     func postcategory(newcategoryname: String) {
         
-        // 넣는 순서도 순서대로여야 하는 것 같다.
+        
         let addcategory = Addcategory(userIdx: UserDefaults.standard.integer(forKey: "userIdx"), flag: flag ?? 0, category_name: newcategoryname)
         guard let uploadData = try? JSONEncoder().encode(addcategory)
         else {return}
         
-        // URL 객체 정의
+        
         let url = URL(string: "https://www.pigmoney.xyz/category")
         
-        // URLRequest 객체를 정의
+        
         var request = URLRequest(url: url!)
-        request.httpMethod = "POST" //GET이라고 써있는데 이해 안 됨
-        // HTTP 메시지 헤더
+        request.httpMethod = "POST"
+        
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue( UserDefaults.standard.string(forKey: "accessToken") ?? "0", forHTTPHeaderField: "X-ACCESS-TOKEN")
         
         
-        // URLSession 객체를 통해 전송, 응답값 처리
+    
         URLSession.shared.uploadTask(with: request, from: uploadData) { (data, response, error) in
             
-            // 서버가 응답이 없거나 통신이 실패
+         
             if let e = error {
                 NSLog("An error has occured: \(e.localizedDescription)")
                 return
             }
-            // 응답 처리 로직
-            // guard let data = data else { return }
-            
-            // data
+    
             
             
             
             
-            // POST 전송
         }.resume()
         
         self.loadcategory()
@@ -314,7 +301,7 @@ class FixedRecordViewController: UIViewController, UITextFieldDelegate {
 
     
     func initUI() {
-        // DropDown View의 배경
+        
         dropView.backgroundColor = UIColor.init(named: "#F1F1F1")
         dropView.layer.cornerRadius = 8
         
@@ -400,7 +387,7 @@ class FixedRecordViewController: UIViewController, UITextFieldDelegate {
             self.postcategory(newcategoryname: alert.textFields?[0].text ?? "알 수 없음")
             self.setDropdown()
                 }
-        let cancelAction = UIAlertAction(title: "삭제", style: .cancel)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
         alert.addAction(addAction)
         alert.addAction(cancelAction)
         present(alert, animated: false, completion: nil)
@@ -413,8 +400,6 @@ class FixedRecordViewController: UIViewController, UITextFieldDelegate {
         moneyAmount = MoneyTextField.text ?? nil
         categorytype = tfInput.text ?? nil
         if moneyAmount?.isEmpty ?? false || categorytype?.isEmpty ?? false {
-            print(moneyAmount?.isEmpty as Any)
-            print(categorytype?.isEmpty as Any)
             let sheet = UIAlertController(title: "경고", message: "모든 입력칸에 올바르게 입력하였는지 확인해주세요", preferredStyle: .alert)
             sheet.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in print("빈 입력칸 확인") }))
             present(sheet, animated: true)

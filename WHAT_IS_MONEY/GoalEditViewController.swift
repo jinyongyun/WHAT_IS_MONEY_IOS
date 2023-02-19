@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import AVFoundation
+import Photos
 
 
 
@@ -58,9 +59,7 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
     
     
     override func viewWillAppear(_ animated: Bool) {
-        print("viewWillappear")
         TokenClass.handlingToken()
-        print(goalIdx as Any)
         self.loadgoal()
     }
     override func viewDidLoad() {
@@ -118,16 +117,10 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
         
         // MARK: [URL 지정 실시]
         let urlComponents = URLComponents(string: "https://www.pigmoney.xyz/goal/uploadGoalImage/\(goalIdx!)/\(userIdx)")
-        print("\n\n\n여기가 마지막 보루다!!:", urlComponents as Any)
+        
         // [boundary 설정 : 바운더리 라인 구분 필요 위함]
         let boundary = "Boundary-\(UUID().uuidString)" // 고유값 지정
         
-        print("")
-        print("====================================")
-        print("[A_Image >> requestPOST() :: 바운더리 라인 구분 확인 실시]")
-        print("boundary :: ", boundary)
-        print("====================================")
-        print("")
         
         
         // [http 통신 타입 및 헤더 지정 실시]
@@ -135,7 +128,7 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
         requestURL.httpMethod = "POST" // POST 방식
         requestURL.setValue(accessToken!, forHTTPHeaderField: "X-ACCESS-TOKEN")
         requestURL.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type") // 멀티 파트 타입
-        print("header!!!",requestURL.allHTTPHeaderFields as Any)
+        
         
         // [서버로 전송할 uploadData 데이터 형식 설정]
         var uploadData = Data()
@@ -146,14 +139,7 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
         // [멀티 파트 전송 파라미터 삽입 : 딕셔너리 for 문 수행]
         for (key, value) in reqestParam {
             if "\(key)" == "\(file)" { // MARK: [사진 파일 인 경우]
-                print("")
-                print("====================================")
-                print("[A_Image >> requestPOST() :: 멀티 파트 전송 파라미터 확인 실시]")
-                print("타입 :: ", "사진 파일")
-                print("key :: ", key)
-                print("value :: ", value)
-                print("====================================")
-                print("")
+             
                 
                 uploadData.append(boundaryPrefix.data(using: .utf8)!)
                 uploadData.append("Content-Disposition: form-data; name=\"\(file)\"; filename=\"\(file)\"\r\n".data(using: .utf8)!) // [파라미터 key 지정]
@@ -163,14 +149,7 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
                 uploadData.append("--\(boundary)--".data(using: .utf8)!)
             }
             else { // MARK: [일반 파라미터인 경우]
-                print("")
-                print("====================================")
-                print("[A_Image >> requestPOST() :: 멀티 파트 전송 파라미터 확인 실시]")
-                print("타입 :: ", "일반 파라미터")
-                print("key :: ", key)
-                print("value :: ", value)
-                print("====================================")
-                print("")
+               
                 
                 uploadData.append(boundaryPrefix.data(using: .utf8)!)
                 uploadData.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: .utf8)!) // [파라미터 key 지정]
@@ -181,13 +160,7 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
         
         
         // [http 요쳥을 위한 URLSessionDataTask 생성]
-        print("")
-        print("====================================")
-        print("[A_Image >> requestPOST() :: 사진 업로드 요청 실시]")
-        print("url :: ", requestURL)
-        print("uploadData :: ", uploadData)
-        print("====================================")
-        print("")
+       
         
         // MARK: [URLSession uploadTask 수행 실시]
         let dataTask = URLSession(configuration: .default)
@@ -197,12 +170,7 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
 
             // [error가 존재하면 종료]
             guard error == nil else {
-                print("")
-                print("====================================")
-                print("[A_Image >> requestPOST() :: 사진 업로드 요청 실패]")
-                print("fail : ", error?.localizedDescription ?? "")
-                print("====================================")
-                print("")
+               
                 return
             }
 
@@ -210,14 +178,7 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
             let successsRange = 200..<300
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, successsRange.contains(statusCode)
             else {
-                print("")
-                print("====================================")
-                print("[A_Image >> requestPOST() :: 사진 업로드 요청 에러]")
-                print("error : ", (response as? HTTPURLResponse)?.statusCode ?? 0)
-                print("allHeaderFields : ", (response as? HTTPURLResponse)?.allHeaderFields ?? "")
-                print("msg : ", (response as? HTTPURLResponse)?.description ?? "")
-                print("====================================")
-                print("")
+            
                 return
             }
 
@@ -226,48 +187,20 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
             let resultLen = data! // 데이터 길이
             do {
                 guard let jsonConvert = try JSONSerialization.jsonObject(with: data!) as? [String: Any] else {
-                    print("")
-                    print("====================================")
-                    print("[A_Image >> requestPOST() :: 사진 업로드 요청 에러]")
-                    print("error : ", "json 형식 데이터 convert 에러")
-                    print("====================================")
-                    print("")
+                   
                     return
                 }
                 guard let JsonResponse = try? JSONSerialization.data(withJSONObject: jsonConvert, options: .prettyPrinted) else {
-                    print("")
-                    print("====================================")
-                    print("[A_Image >> requestPOST() :: 사진 업로드 요청 에러]")
-                    print("error : ", "json 형식 데이터 변환 에러")
-                    print("====================================")
-                    print("")
+                 
                     return
                 }
                 guard let resultString = String(data: JsonResponse, encoding: .utf8) else {
-                    print("")
-                    print("====================================")
-                    print("[A_Image >> requestPOST() :: 사진 업로드 요청 에러]")
-                    print("error : ", "json 형식 데이터 >> String 변환 에러")
-                    print("====================================")
-                    print("")
+                  
                     return
                 }
-                print("")
-                print("====================================")
-                print("[A_Image >> requestPOST() :: 사진 업로드 요청 성공]")
-                print("allHeaderFields : ", (response as? HTTPURLResponse)?.allHeaderFields ?? "")
-                print("resultCode : ", resultCode)
-                print("resultLen : ", resultLen)
-                print("resultString : ", resultString)
-                print("====================================")
-                print("")
+             
             } catch {
-                print("")
-                print("====================================")
-                print("[A_Image >> requestPOST() :: 사진 업로드 요청 에러]")
-                print("error : ", "Trying to convert JSON data to string")
-                print("====================================")
-                print("")
+             
                 return
             }
         }.resume()
@@ -327,37 +260,15 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
     
     
         func patchGoal() {
-            // 넣는 순서도 순서대로여야 하는 것 같다.
-            /*print("\n\n\n\n\n\n")
-            print("여기 꼭 확인해라 좋은 말 할 때")
-            print(oldImage == self.convertImageToBase64(image: ImgUI.currentImage!))
-            print(convertImageToBase64(image: ImgUI.currentImage!))
-            print(GoalPriceTextField.text as Any)
-            print(PriceTextField.text as Any)
-            print(GoalNameTextField.text as Any)
-            print("확인 끝")
-            print("\n\n\n\n\n\n")*/
+
             
             
             let patchgoal = patchgoal(goal_amount: Int(GoalPriceTextField.text ?? "5") ?? 5, init_amount: Int(PriceTextField.text ?? "5") ?? 5, category_name: GoalNameTextField.text ?? "알 수 없음")
-            /*let patchgoal = patchgoal(image: convertImageToBase64(image: ImgUI.currentImage!), goal_amount: Int(GoalPriceTextField.text ?? "5") ?? 5, init_amount: Int(InitPriceTextField.text ?? "5") ?? 5, category_name: GoalNameTextField.text ?? "알 수 없음")*/
+
             
-            print("\n\n\n\n\n")
-            print("=================")
-            print("여기도 확인")
-            print(oldImage == self.convertImageToBase64(image: ImgUI.currentImage!))
-            print(patchgoal)
-            print("=================")
-            print("\n\n\n\n\n")
                                       
             guard let uploadData = try? JSONEncoder().encode(patchgoal) else {return}
             
-            print("\n\n\n\n\n")
-            print("=================")
-            print("업로드 데이터")
-            print(uploadData.self)
-            print("=================")
-            print("\n\n\n\n\n")
             
             
             // URL 객체 정의
@@ -373,8 +284,6 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
             request.setValue( UserDefaults.standard.string(forKey: "accessToken") ?? "0", forHTTPHeaderField: "X-ACCESS-TOKEN")
             
             request.httpBody = uploadData
-            print("###############업로드 데이터다###################")
-            print(String(data: uploadData, encoding: .utf8)!)
     
                     // URLSession 객체를 통해 전송, 응답값 처리
                     URLSession.shared.uploadTask(with: request, from: uploadData) { (data, response, error) in
@@ -384,9 +293,6 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
                             return
                         }
                         
-                        print("**************응답데이터*****************")
-                        print(String(data: data, encoding: .utf8)!)
-                        print("**************응답데이터*****************")
                         
                         guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
                             print("Error: HTTP request failed")
@@ -406,28 +312,54 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
     
     func openLibrary(){
 
-      picker.sourceType = .photoLibrary
-
-      present(picker, animated: false, completion: nil)
+        
+              PHPhotoLibrary.requestAuthorization( { [self] status in
+                  switch status{
+                  case .authorized:
+                      print("Album: 권한 허용")
+                      DispatchQueue.main.sync {
+                          self.picker.sourceType = .photoLibrary
+                          present(picker, animated: false, completion: nil)
+                      }
+                  case .denied:
+                      print("Album: 권한 거부")
+                      DispatchQueue.main.sync {
+                          
+                          let alert = UIAlertController(title: "앨범권한거부", message: "앨범 접근에 대한 권한이 거부됐습니다.(권한 변경은 아이폰 설정에서!)", preferredStyle: .alert)
+                          let ok =  UIAlertAction(title: "확인", style: .cancel)
+                          alert.addAction(ok)
+                          present(alert, animated: true, completion: nil)
+                          
+                      }
+                  case .restricted, .notDetermined:
+                      print("Album: 선택하지 않음")
+                      
+                  default:
+                      break
+                  }
+              })
 
     }
 
     func openCamera(){
 
-        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
-
-        picker.sourceType = .camera
-
+        AVCaptureDevice.requestAccess(for: .video, completionHandler: { [self] (granted: Bool) in
+            if granted {
+                print("Camera: 권한 허용")
+                DispatchQueue.main.sync {
+                    self.picker.sourceType = .camera
                     present(picker, animated: false, completion: nil)
-
                 }
-
-                else{
-
-                    print("Camera not available")
-
+            } else {
+                print("Camera: 권한 거부")
+                DispatchQueue.main.sync {
+                    let alert = UIAlertController(title: "카메라접근권한거부", message: "카메라 접근에 대한 권한이 거부됐습니다.(권한 변경은 아이폰 설정에서!)", preferredStyle: .alert)
+                    let ok =  UIAlertAction(title: "확인", style: .cancel)
+                    alert.addAction(ok)
+                    present(picker, animated: true, completion: nil)
                 }
-
+            }
+        })
     }
 
     @IBAction func TapImgUIButton(_ sender: UIButton) {
@@ -460,22 +392,14 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if var img = info[UIImagePickerController.InfoKey.originalImage]{
-                //img = img.resized(toWidth: 90.0) ?? img
-                // [앨범에서 선택한 사진 정보 확인]
-                print("")
-                print("====================================")
-                print("[A_Image >> imagePickerController() :: 앨범에서 선택한 사진 정보 확인 및 사진 표시 실시]")
-                print("[사진 정보 :: ", info)
-                print("====================================")
-                print("")
+             
+                
                 
                 img = (img as? UIImage)!.resized(toWidth: 240.0) ?? img
                 let newimg = (img as? UIImage)!.resized(toWidth: 90.0) ?? img
                 ImgUI.layer.cornerRadius = ImgUI.layer.frame.size.width / 2
                 ImgUI.setImage(newimg as? UIImage, for: .normal)
-                // [이미지 뷰에 앨범에서 선택한 사진 표시 실시]
-                //self.imageView.image = img as? UIImage
-                //imagepickButton.setImage((img as! UIImage), for: .normal)
+        
                 
                 // [이미지 데이터에 선택한 이미지 지정 실시]
                 self.imageData = (img as? UIImage)!.jpegData(compressionQuality: 0.8) as NSData? // jpeg 압축 품질 설정
@@ -501,10 +425,7 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
         
         
         if ImgUI.currentImage == UIImage(named: "plus") || goaltext?.isEmpty ?? true || goalpricetext?.isEmpty ?? true || initpricetext?.isEmpty ?? true {
-            print(ImgUI.currentImage == UIImage(named: "plus"))
-            print(goaltext?.isEmpty as Any)
-            print(goalpricetext?.isEmpty as Any)
-            print(initpricetext?.isEmpty as Any)
+           
             let sheet = UIAlertController(title: "경고", message: "모든 입력칸에 올바르게 입력하였는지 확인해주세요", preferredStyle: .alert)
             sheet.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in print("빈 입력칸 확인") }))
             present(sheet, animated: true)
@@ -519,24 +440,17 @@ class GoalEditViewController: UIViewController, UINavigationControllerDelegate &
                
                // [일정 시간 후 작업 수행 : 로딩 프로그레스 종료 호출]
          DispatchQueue.main.asyncAfter(deadline: .now() + 8) { // [6초 후에 동작 실시]
-                   print("")
-                   print("===============================")
-                   print("[ViewController >> viewDidLoad() :: 시간 만료]")
-                   print("===============================")
-                   print("")
+                   
                    self.progressStop()
                }
 
       
         
-        print("goalIdx는 이거다!!: ", goalIdx as Any)
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1){ [self] in
             self.PriceTextField.endEditing(true)
             patchGoal()
-            /*guard let GoalDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "GoalDetailViewController") as? GoalDetailViewController else {return}
-            GoalDetailViewController.goalIdx = goalIdx!
-            //print(GoalDetailViewController.goalIdx)*/
+            
             self.navigationController?.popViewController(animated: true)
         }
         

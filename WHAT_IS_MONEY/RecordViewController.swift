@@ -54,11 +54,10 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     var recordViewData : [resultone] = []
     
-    /*[resultone(date: "2023.01.06", records: [recordforaday(sort: "지출", category: "쇼핑", price: "37,720"),recordforaday(sort: "지출", category: "교통", price: "17,720"),recordforaday(sort: "저축", category: "용돈", price: "15,020")]),recordData(date: "2023.01.07", records: [recordforaday(sort: "지출", category: "쇼핑", price: "37,720"),recordforaday(sort: "지출", category: "식비", price: "17,720"),recordforaday(sort: "저축", category: "용돈", price: "15,020")]),recordData(date: "2023.01.08", records: [recordforaday(sort: "지출", category: "쇼핑", price: "37,720"),recordforaday(sort: "지출", category: "식비", price: "17,720"),recordforaday(sort: "저축", category: "용돈", price: "15,020")]),recordData(date: "2023.01.10", records: [recordforaday(sort: "지출", category: "쇼핑", price: "37,720"),recordforaday(sort: "지출", category: "식비", price: "17,720"),recordforaday(sort: "저축", category: "용돈", price: "15,020")])]*/
    
     override func viewWillAppear(_ animated: Bool) {
         TokenClass.handlingToken()
-        print(goalIdx as Any)
+        
         self.loadrecordlist()
         RecordTableView.reloadData()
     }
@@ -91,7 +90,7 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func loadrecordlist(){
        let useridx = UserDefaults.standard.integer(forKey: "userIdx")
         if let url = URL(string: "https://www.pigmoney.xyz/records/\(useridx)/\(goalIdx!)?type=\(type)"){
-            print(url)
+            
             var request = URLRequest.init(url: url)
             
             request.httpMethod = "GET"
@@ -108,9 +107,7 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
                             print("Error: Did not receive data")
                             return}
                         
-                    print("뭐가문제야\n\n\n\n")
-                        print("이거 확인")
-                    print(String(data: data, encoding: .utf8)!)
+                 
                         
                         
                     guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
@@ -198,9 +195,7 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.thirdCategoryLabel.text = recorddata.records[2].category
             cell.thirdPriceLabel.text = String(recorddata.records[2].amount)
             
-            //cell.delegate = self
-            //cell.arrowButton.tag = indexPath.row
-            //cell.arrowButton.addTarget(self, action: #selector(arrowClicked), for: .touchUpInside)
+         
             
             return cell
             
@@ -231,9 +226,7 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             cell.secondCategoryLabel.text = recorddata.records[1].category
             cell.secondPriceLabel.text = String(recorddata.records[1].amount)
-            //cell.delegate = self
-            //cell.arrowButton.tag = indexPath.row
-            //cell.arrowButton.addTarget(self, action: #selector(arrowClicked), for: .touchUpInside)
+            
             
             
                 cell.thirdSortLabel.isHidden = true
@@ -276,20 +269,6 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
        else if recorddata.records.count == 0 {
             
-          /*
-                cell.firstSortLabel.isHidden = true
-                cell.firstCategoryLabel.isHidden = true
-                cell.firstPriceLabel.isHidden = true
-                
-                
-                cell.secondSortLabel.isHidden = true
-                cell.secondCategoryLabel.isHidden = true
-                cell.secondPriceLabel.isHidden = true
-                
-                
-                cell.thirdSortLabel.isHidden = true
-                cell.thirdCategoryLabel.isHidden = true
-                cell.thirdPriceLabel.isHidden = true */
                
            
             return cell
@@ -302,17 +281,13 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
             
-           // tableView.deselectRow(at: indexPath, animated: true)
+         
         guard let recordDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "RecordDetailViewController") as? RecordDetailViewController else {return}
         let goalIdx = self.goalIdx
        recordDetailViewController.goalIdx = goalIdx
-        print(recordDetailViewController.goalIdx as Any)
         recordDetailViewController.recordDate = recordViewData[indexPath.row].date
-        print(recordDetailViewController.recordDate as Any)
         self.navigationController?.pushViewController(recordDetailViewController, animated: true)
-//            let vc = RecordDetailViewController(nibName: "RecordDetailViewController", bundle: nil)
-//            vc.modalPresentationStyle = .fullScreen
-//            self.present(vc, animated: true, completion: nil)
+
         }
    
     
@@ -320,13 +295,4 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
 }
-//extension RecordViewController: ArrowClickedDelegate {
-//    func presentToRecordDetailViewController() {
-//         let vc = self.storyboard?.instantiateViewController(withIdentifier: "RecordDetailViewController") as? RecordDetailViewController
-//
-//        self.navigationController?.pushViewController(vc!, animated: true)
-//
-//
-//
-//    }
-//}
+

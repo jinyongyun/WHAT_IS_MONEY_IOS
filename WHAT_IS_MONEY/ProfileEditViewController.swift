@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVFoundation
+import Photos
 
 class ProfileEditViewController: UIViewController {
     
@@ -117,18 +119,52 @@ class ProfileEditViewController: UIViewController {
             }.resume()
     }
     func openLibrary(){
-      picker.sourceType = .photoLibrary
-      present(picker, animated: false, completion: nil)
+        PHPhotoLibrary.requestAuthorization( { [self] status in
+            switch status{
+            case .authorized:
+                print("Album: 권한 허용")
+                DispatchQueue.main.sync {
+                    self.picker.sourceType = .photoLibrary
+                    present(picker, animated: false, completion: nil)
+                }
+            case .denied:
+                print("Album: 권한 거부")
+                DispatchQueue.main.sync {
+                    
+                    let alert = UIAlertController(title: "앨범권한거부", message: "앨범 접근에 대한 권한이 거부됐습니다.(권한 변경은 아이폰 설정에서!)", preferredStyle: .alert)
+                    let ok =  UIAlertAction(title: "확인", style: .cancel)
+                    alert.addAction(ok)
+                    present(alert, animated: true, completion: nil)
+                    
+                }
+            case .restricted, .notDetermined:
+                print("Album: 선택하지 않음")
+                
+            default:
+                break
+            }
+        })
     }
 
     func openCamera(){
-        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
-        picker.sourceType = .camera
-        present(picker, animated: false, completion: nil)
-        }
-        else{
-            print("Camera not available")
-        }
+        AVCaptureDevice.requestAccess(for: .video, completionHandler: { [self] (granted: Bool) in
+            if granted {
+                print("Camera: 권한 허용")
+                DispatchQueue.main.sync {
+                    self.picker.sourceType = .camera
+                    present(picker, animated: false, completion: nil)
+                }
+            } else {
+                print("Camera: 권한 거부")
+                DispatchQueue.main.sync {
+                    let alert = UIAlertController(title: "카메라접근권한거부", message: "카메라 접근에 대한 권한이 거부됐습니다.(권한 변경은 아이폰 설정에서!)", preferredStyle: .alert)
+                    let ok =  UIAlertAction(title: "확인", style: .cancel)
+                    alert.addAction(ok)
+                    present(picker, animated: true, completion: nil)
+                }
+            }
+        })
+        
     }
     
     @objc func goChangeID(sender:UIGestureRecognizer){
@@ -151,15 +187,10 @@ class ProfileEditViewController: UIViewController {
         let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
         self.openCamera()
         }
-//        let delete = UIAlertAction(title: "삭제", style: .destructive){
-//            (action) -> Void in
-//            self.requestPOST()
-//            self.imagepickButton.setImage(UIImage(named: "jinperson"), for: .normal)
-//                }
+
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alert.addAction(library)
         alert.addAction(camera)
-//        alert.addAction(delete)
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
